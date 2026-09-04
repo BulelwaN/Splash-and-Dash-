@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Book Service</title>
+
+<style>
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
+
+.header{
+    background:#0c3c60;
+    color:white;
+    padding:20px;
+}
+
+.navbar{
+    background:#082a44;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:bold;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    background:#0c3c60;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#14527f;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.footer{
+    margin-top:30px;
+    background:#082a44;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Book A Car Wash Service</h1>
+</div>
+
+<div class="navbar">
+
+<a href="customer - dashboard.html">Dashboard</a>
+<a href="customer - bookings.html">Book Service</a>
+<a href="customer - history.html">Booking History</a>
+<a href="customer - payment.html">Payments</a>
+<a href="login.html">Logout</a>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Create Booking</h2>
+
+<br>
+
+
+
+<div class="success">
+   
+</div>
+
+
+
+<form method="POST">
+
+<h3>Vehicle Information</h3>
+
+<input
+type="text"
+name="vehicle_make"
+placeholder="Vehicle Make"
+required>
+
+<input
+type="text"
+name="vehicle_model"
+placeholder="Vehicle Model"
+required>
+
+<input
+type="text"
+name="registration_number"
+placeholder="Registration Number"
+required>
+
+<select name="vehicle_type" required>
+
+<option value="">
+Select Vehicle Type
+</option>
+
+<option>Sedan</option>
+<option>Hatchback</option>
+<option>SUV</option>
+<option>Bakkie</option>
+<option>Van</option>
+
+</select>
+
+<h3>Service Selection</h3>
+
+<select
+name="service_id"
+required>
+
+<option value="">
+Select Service
+</option>
+
+
+
+<option value="">
+
+
+
+</option>
+
+
+
+</select>
+
+<h3>Booking Schedule</h3>
+
+<input
+type="date"
+name="booking_date"
+required>
+
+<input
+type="time"
+name="booking_time"
+required>
+
+<button
+type="submit"
+name="book_service">
+
+Create Booking
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2026 Splash & Dash Mobile Car Wash</p>
+</div>
+
+</body>
+</html>
