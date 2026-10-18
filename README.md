@@ -120,3 +120,45 @@ Future versions could include:
  7. Project Purpose
 
 The purpose of Splash & Dash is to provide a simple digital solution for managing car wash bookings. The web system supports customers, staff and administrators, while the Android application gives customers another way to make and manage their bookings.
+
+
+# Splash & Dash Car Wash Management System
+
+## Project Overview
+Splash & Dash is a car wash management system designed to
+allow customers to explore services, manage vehicle details,
+make bookings and view booking information.
+
+The system is being developed as part of Task 2.
+
+## Planned Features
+- Responsive public website
+- Customer registration and sign-in
+- Customer dashboard and booking management
+- Staff service queue
+- Administrator management screens
+- Input validation and secure authentication
+- Backend API and relational database
+- Google sign-in (SSO)
+- Automated testing and continuous integration
+
+## Technology Stack
+The final backend, database and hosting technologies will be
+documented after confirmation of the module requirements.
+
+## Running the Frontend
+1. Clone the repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `index.html` in a browser, or use the Live Server
+   extension.
+
+## Testing
+Automated tests and their execution instructions will be
+added as the application is implemented.
+
+## Team Contributions
+Document each group member's responsibilities and contributions.
+
+## Security
+Never commit passwords, API keys, database credentials or
+other secrets to the repository.
