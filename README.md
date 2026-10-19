@@ -180,6 +180,14 @@ Future versions could include:
 
 The purpose of Splash & Dash is to provide a simple digital solution for managing car wash bookings. The web system supports customers, staff and administrators, while the Android application gives customers another way to make and manage their bookings.
 
+## 8. Features
+- Account access: Email/password sign-in and Google sign-in using Firebase Authentication.
+- Customer profiles: Store customer details in Cloud Firestore.
+- Service bookings: Submit a booking with vehicle details, registration, service, price, date, and time.
+- Booking statuses: Support booking progress states such as Pending, In Progress, and Completed.
+- Role-based access: Firestore rules distinguish Customer, Staff, and Admin roles.
+- Payment requests: Firestore data model supports payment requests with Cash, Card, and EFT methods. Confirm the relevant screens and workflow are implemented before advertising this as a completed feature.
+
 # Splash & Dash Car Wash Management System
 
 ## Project Overview
@@ -188,17 +196,6 @@ allow customers to explore services, manage vehicle details,
 make bookings and view booking information.
 
 The system is being developed as part of Task 2.
-
-## Planned Features
-- Responsive public website
-- Customer registration and sign-in
-- Customer dashboard and booking management
-- Staff service queue
-- Administrator management screens
-- Input validation and secure authentication
-- Backend API and relational database
-- Google sign-in (SSO)
-- Automated testing and continuous integration
 
 ## Technology Stack
 The final backend, database and hosting technologies will be
