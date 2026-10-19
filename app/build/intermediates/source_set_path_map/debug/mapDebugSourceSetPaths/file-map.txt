@@ -1,0 +1,53 @@
+com.example.splashanddash.app-core-ktx-1.15.0-0 C:\Users\Student\.gradle\caches\8.10.2\transforms\05361799baa2336cf26c58d490104562\transformed\core-ktx-1.15.0\res
+com.example.splashanddash.app-firebase-common-22.0.1-1 C:\Users\Student\.gradle\caches\8.10.2\transforms\0c50f63f7cdc9322121cf354a290f875\transformed\firebase-common-22.0.1\res
+com.example.splashanddash.app-credentials-play-services-auth-1.5.0-2 C:\Users\Student\.gradle\caches\8.10.2\transforms\137dd3bf76d497db62ecff49aff0e1bf\transformed\credentials-play-services-auth-1.5.0\res
+com.example.splashanddash.app-emoji2-views-helper-1.3.0-3 C:\Users\Student\.gradle\caches\8.10.2\transforms\1d3238767efe39eaa8debb398404ffd3\transformed\emoji2-views-helper-1.3.0\res
+com.example.splashanddash.app-profileinstaller-1.4.0-4 C:\Users\Student\.gradle\caches\8.10.2\transforms\1eab9575097a7dbad73d09c2f3cb25c4\transformed\profileinstaller-1.4.0\res
+com.example.splashanddash.app-datastore-preferences-release-5 C:\Users\Student\.gradle\caches\8.10.2\transforms\3335ff2e52d1b1e28de1ee3e6df71e6e\transformed\datastore-preferences-release\res
+com.example.splashanddash.app-play-services-basement-18.8.0-6 C:\Users\Student\.gradle\caches\8.10.2\transforms\38176ab3f29cb8fbb8b680b305c54798\transformed\play-services-basement-18.8.0\res
+com.example.splashanddash.app-appcompat-resources-1.7.0-7 C:\Users\Student\.gradle\caches\8.10.2\transforms\386e95a87bf2ffe8f36e6e94702628a4\transformed\appcompat-resources-1.7.0\res
+com.example.splashanddash.app-drawerlayout-1.1.1-8 C:\Users\Student\.gradle\caches\8.10.2\transforms\3d3702060005e830d45931eae0b1bf6e\transformed\drawerlayout-1.1.1\res
+com.example.splashanddash.app-transition-1.5.0-9 C:\Users\Student\.gradle\caches\8.10.2\transforms\47e66bb7b4f4883124a5e3d68ade6e82\transformed\transition-1.5.0\res
+com.example.splashanddash.app-emoji2-1.3.0-10 C:\Users\Student\.gradle\caches\8.10.2\transforms\5251ccb4fbcd894907a2adb96cb21120\transformed\emoji2-1.3.0\res
+com.example.splashanddash.app-play-services-auth-21.1.1-11 C:\Users\Student\.gradle\caches\8.10.2\transforms\585c53e0651e09f3f550d967421ed468\transformed\play-services-auth-21.1.1\res
+com.example.splashanddash.app-lifecycle-livedata-2.6.2-12 C:\Users\Student\.gradle\caches\8.10.2\transforms\73245f4ef619a0f74bfb172c64b1b228\transformed\lifecycle-livedata-2.6.2\res
+com.example.splashanddash.app-lifecycle-viewmodel-savedstate-2.6.2-13 C:\Users\Student\.gradle\caches\8.10.2\transforms\7955914ba8c8a1eef9b5e6ad986752db\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.splashanddash.app-material-1.12.0-14 C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\res
+com.example.splashanddash.app-lifecycle-runtime-2.6.2-15 C:\Users\Student\.gradle\caches\8.10.2\transforms\82d9bbb6ea96a2c680b136c998ef3685\transformed\lifecycle-runtime-2.6.2\res
+com.example.splashanddash.app-datastore-release-16 C:\Users\Student\.gradle\caches\8.10.2\transforms\894f4c79a74ddea1a67eadaace9d1147\transformed\datastore-release\res
+com.example.splashanddash.app-activity-1.10.0-17 C:\Users\Student\.gradle\caches\8.10.2\transforms\896ccc118d38e6913612a75c7fee1628\transformed\activity-1.10.0\res
+com.example.splashanddash.app-recyclerview-1.1.0-18 C:\Users\Student\.gradle\caches\8.10.2\transforms\8ab1c825d757b131d62abd6298ce3998\transformed\recyclerview-1.1.0\res
+com.example.splashanddash.app-lifecycle-livedata-core-2.6.2-19 C:\Users\Student\.gradle\caches\8.10.2\transforms\8d2b981cece34c168aae980146eb3a15\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.splashanddash.app-constraintlayout-2.0.1-20 C:\Users\Student\.gradle\caches\8.10.2\transforms\8ff53c71ec0585b8c5c638c1dd7023dd\transformed\constraintlayout-2.0.1\res
+com.example.splashanddash.app-credentials-1.5.0-21 C:\Users\Student\.gradle\caches\8.10.2\transforms\9ec70f3890699d5992d42c2a6d700a14\transformed\credentials-1.5.0\res
+com.example.splashanddash.app-browser-1.4.0-22 C:\Users\Student\.gradle\caches\8.10.2\transforms\a307686842d06011c0e0631478499ac9\transformed\browser-1.4.0\res
+com.example.splashanddash.app-startup-runtime-1.1.1-23 C:\Users\Student\.gradle\caches\8.10.2\transforms\a58cc476a2f1f4da3f3f398c247797d7\transformed\startup-runtime-1.1.1\res
+com.example.splashanddash.app-fragment-1.5.7-24 C:\Users\Student\.gradle\caches\8.10.2\transforms\ac03add67a1e9b67edc3ed039953a8e2\transformed\fragment-1.5.7\res
+com.example.splashanddash.app-lifecycle-viewmodel-2.6.2-25 C:\Users\Student\.gradle\caches\8.10.2\transforms\b8dc13d8b962b56f540dfc212b60c752\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.splashanddash.app-savedstate-1.2.1-26 C:\Users\Student\.gradle\caches\8.10.2\transforms\bb911edf5b3697ec8b4767d0b407a66d\transformed\savedstate-1.2.1\res
+com.example.splashanddash.app-activity-ktx-1.10.0-27 C:\Users\Student\.gradle\caches\8.10.2\transforms\c919dab6dbf7c6c1b46413622d7da7ed\transformed\activity-ktx-1.10.0\res
+com.example.splashanddash.app-core-common-2.0.3-28 C:\Users\Student\.gradle\caches\8.10.2\transforms\cdfa67923e8c20d3708fa030c3deb7cc\transformed\core-common-2.0.3\res
+com.example.splashanddash.app-tracing-1.2.0-29 C:\Users\Student\.gradle\caches\8.10.2\transforms\ce613e0fc8a788d8f101cea2c100f7d3\transformed\tracing-1.2.0\res
+com.example.splashanddash.app-viewpager2-1.0.0-30 C:\Users\Student\.gradle\caches\8.10.2\transforms\d8536a70d004a89cc0de2ddff258f4a6\transformed\viewpager2-1.0.0\res
+com.example.splashanddash.app-cardview-1.0.0-31 C:\Users\Student\.gradle\caches\8.10.2\transforms\e1b4b244c4f79c67f943a7fc068c1008\transformed\cardview-1.0.0\res
+com.example.splashanddash.app-lifecycle-runtime-ktx-2.6.2-32 C:\Users\Student\.gradle\caches\8.10.2\transforms\e30cb5c2924fd28144fc03f95a2b54f5\transformed\lifecycle-runtime-ktx-2.6.2\res
+com.example.splashanddash.app-appcompat-1.7.0-33 C:\Users\Student\.gradle\caches\8.10.2\transforms\e3aff80542dbe8c2722c38e79e29e099\transformed\appcompat-1.7.0\res
+com.example.splashanddash.app-lifecycle-process-2.6.2-34 C:\Users\Student\.gradle\caches\8.10.2\transforms\e5a04f78e47771e4b31d536fa19b18eb\transformed\lifecycle-process-2.6.2\res
+com.example.splashanddash.app-lifecycle-viewmodel-ktx-2.6.2-35 C:\Users\Student\.gradle\caches\8.10.2\transforms\e7216bf8c31841f0f42990ba3e5cd72f\transformed\lifecycle-viewmodel-ktx-2.6.2\res
+com.example.splashanddash.app-datastore-preferences-core-release-36 C:\Users\Student\.gradle\caches\8.10.2\transforms\e82c08e5505338cdcb6a736b2507d489\transformed\datastore-preferences-core-release\res
+com.example.splashanddash.app-annotation-experimental-1.4.1-37 C:\Users\Student\.gradle\caches\8.10.2\transforms\f054052ce8ad1ea0eff385286032162e\transformed\annotation-experimental-1.4.1\res
+com.example.splashanddash.app-core-1.15.0-38 C:\Users\Student\.gradle\caches\8.10.2\transforms\f08744fd6503d68643b17d987cfaed3d\transformed\core-1.15.0\res
+com.example.splashanddash.app-coordinatorlayout-1.1.0-39 C:\Users\Student\.gradle\caches\8.10.2\transforms\f713fd8c20c5a03e8cc3af3c7e420b4f\transformed\coordinatorlayout-1.1.0\res
+com.example.splashanddash.app-play-services-base-18.5.0-40 C:\Users\Student\.gradle\caches\8.10.2\transforms\fb73626d3323a773ffb325035ad1c3d2\transformed\play-services-base-18.5.0\res
+com.example.splashanddash.app-biometric-1.1.0-41 C:\Users\Student\.gradle\caches\8.10.2\transforms\fcd1b89e2b330af4ef8162fbbcd35477\transformed\biometric-1.1.0\res
+com.example.splashanddash.app-savedstate-ktx-1.2.1-42 C:\Users\Student\.gradle\caches\8.10.2\transforms\fcd782dbe4f8dc55f7cb92caa7bf3a90\transformed\savedstate-ktx-1.2.1\res
+com.example.splashanddash.app-core-runtime-2.2.0-43 C:\Users\Student\.gradle\caches\8.10.2\transforms\fdf4ca5477c5633b45cb7bde1b561bc1\transformed\core-runtime-2.2.0\res
+com.example.splashanddash.app-datastore-core-release-44 C:\Users\Student\.gradle\caches\8.10.2\transforms\fec044319bd3f56985dd51397c486c0a\transformed\datastore-core-release\res
+com.example.splashanddash.app-pngs-45 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\pngs\debug
+com.example.splashanddash.app-res-46 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\processDebugGoogleServices
+com.example.splashanddash.app-resValues-47 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\resValues\debug
+com.example.splashanddash.app-packageDebugResources-48 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.splashanddash.app-packageDebugResources-49 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.splashanddash.app-debug-50 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.splashanddash.app-debug-51 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\debug\res
+com.example.splashanddash.app-main-52 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\res

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#F4F7FA</color>
+    <color name="blue">#0C3C60</color>
+    <color name="border">#DCE4EA</color>
+    <color name="bright_blue">#00A8FF</color>
+    <color name="danger">#B42318</color>
+    <color name="light_blue">#EAF7FF</color>
+    <color name="muted">#65727E</color>
+    <color name="navy">#082A44</color>
+    <color name="success">#1B8A5A</color>
+    <color name="text">#17212B</color>
+    <color name="warning">#C67C00</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Splash &amp; Dash</string>
+    <string name="default_web_client_id" translatable="false">659516192570-4i64npd91345lpdliuhjb3kjt2137uaj.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">659516192570</string>
+    <string name="google_api_key" translatable="false">AIzaSyBnVi3fkiEuV-vTI4r_lxQlUJFCGFjles8</string>
+    <string name="google_app_id" translatable="false">1:659516192570:android:12a4f3e643ca3e056cc203</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBnVi3fkiEuV-vTI4r_lxQlUJFCGFjles8</string>
+    <string name="google_storage_bucket" translatable="false">splashdash-98961.firebasestorage.app</string>
+    <string name="project_id" translatable="false">splashdash-98961</string>
+    <style name="Theme.SplashDash" parent="Theme.Material3.Light.NoActionBar">
+
+        
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+
+        
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSecondary">@color/bright_blue</item>
+
+        
+        <item name="android:colorAccent">@color/bright_blue</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:navigationBarColor">@color/navy</item>
+
+        
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">659516192570-4i64npd91345lpdliuhjb3kjt2137uaj.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">659516192570</string>
+    <string name="google_api_key" translatable="false">AIzaSyBnVi3fkiEuV-vTI4r_lxQlUJFCGFjles8</string>
+    <string name="google_app_id" translatable="false">1:659516192570:android:12a4f3e643ca3e056cc203</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBnVi3fkiEuV-vTI4r_lxQlUJFCGFjles8</string>
+    <string name="google_storage_bucket" translatable="false">splashdash-98961.firebasestorage.app</string>
+    <string name="project_id" translatable="false">splashdash-98961</string>
+</resources>

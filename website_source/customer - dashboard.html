@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+}
+
+.header{
+    background:#0c3c60;
+    color:white;
+    padding:20px;
+}
+
+.navbar{
+    background:#082a44;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:bold;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#0c3c60;
+    font-size:40px;
+}
+
+.actions{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.action{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.action a{
+    display:inline-block;
+    margin-top:15px;
+    background:#0c3c60;
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+}
+
+.footer{
+    margin-top:50px;
+    background:#082a44;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Customer Dashboard</h1>
+    <p>Welcome </p>
+</div>
+
+<div class="navbar">
+    <a href="customer - dashboard.html">Dashboard</a>
+    <a href="customer - bookings.html">Book Service</a>
+    <a href="customer - history.html">Booking History</a>
+    <a href="login.html">Logout</a>
+</div>
+
+<div class="container">
+
+    <div class="stats">
+
+        <div class="card">
+            <h2></h2>
+            <p>Total Bookings</p>
+        </div>
+
+        <div class="card">
+            <h2></h2>
+            <p>Completed Services</p>
+        </div>
+
+        <div class="card">
+            <h2></h2>
+            <p>Pending Bookings</p>
+        </div>
+
+    </div>
+
+    <div class="actions">
+
+        <div class="action">
+            <h3>Book A Service</h3>
+            <a href="customer - bookings.html">Open</a>
+        </div>
+
+        <div class="action">
+            <h3>Booking History</h3>
+            <a href="customer - history.html">Open</a>
+        </div>
+
+        <div class="action">
+            <h3>Make Payment</h3>
+            <a href="customer - payment.html">Open</a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2026 Splash & Dash Car Wash</p>
+</div>
+
+</body>
+</html>

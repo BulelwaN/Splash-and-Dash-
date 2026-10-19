@@ -1,0 +1,4 @@
+#Mon Oct 19 16:27:39 SAST 2026
+base.0=C\:\\Users\\Student\\AndroidStudioProjects\\SplashDashAndroid 2\\SplashDashAndroid\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex
