@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".SplashDashApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/splash_dash_logo"
+        android:label="SplashDash"
+        android:roundIcon="@drawable/splash_dash_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SplashDash">
+
+        <!-- Splash Screen -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Main/Home Screen -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Authentication -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <!-- Customer -->
+        <activity
+            android:name=".CustomerDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookingHistoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+
+        <!-- Staff -->
+        <activity
+            android:name=".StaffDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ServiceQueueActivity"
+            android:exported="false" />
+
+        <!-- Admin -->
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ManageBookingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ManageCustomersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ManageStaffActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+
+        <!-- General -->
+        <activity
+            android:name=".GalleryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ContactActivity"
+            android:exported="false" />
+
+        <!-- Settings / Preferences -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
