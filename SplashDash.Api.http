@@ -1,0 +1,6 @@
+@SplashDash.Api_HostAddress = http://localhost:5160
+
+GET {{SplashDash.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
