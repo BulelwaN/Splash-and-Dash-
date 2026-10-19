@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Make Payment</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+}
+
+.header{
+    background:#0c3c60;
+    color:white;
+    padding:20px;
+}
+
+.navbar{
+    background:#082a44;
+    padding:15px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:bold;
+}
+
+.container{
+    width:70%;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    background:#0c3c60;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#14527f;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Make Payment</h1>
+</div>
+
+<div class="navbar">
+
+<a href="customer - dashboard.html">Dashboard</a>
+<a href="customer - bookings.html">Book Service</a>
+<a href="customer - history.html">Booking History</a>
+<a href="customer - payment.html">Payments</a>
+<a href="login.html">Logout</a>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Payment Form</h2>
+
+<br>
+
+
+<div class="success">
+ 
+</div>
+
+
+<form method="POST">
+
+<label>Select Booking</label>
+
+<select name="booking_id" id="bookingSelect" required>
+
+<option value="">Select Booking</option>
+
+
+
+<option 
+value=""
+data-price="">
+
+
+
+</option>
+
+
+
+</select>
+
+<label>Amount</label>
+
+<input
+type="number"
+step="0.01"
+name="payment_amount"
+id="payment_amount"
+placeholder="Amount"
+required>
+
+<label>Payment Method</label>
+
+<select name="payment_method" required>
+
+<option value="">Select Method</option>
+<option>Cash</option>
+<option>Card</option>
+<option>EFT</option>
+
+</select>
+
+<button type="submit" name="make_payment">
+Submit Payment
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("bookingSelect").addEventListener("change", function () {
+    var price = this.options[this.selectedIndex].getAttribute("data-price");
+    document.getElementById("payment_amount").value = price;
+});
+</script>
+
+</body>
+</html>

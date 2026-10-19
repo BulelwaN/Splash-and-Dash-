@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="navy">#061C2D</color>
+    <color name="blue">#0A4268</color>
+    <color name="bright_blue">#21B5FF</color>
+
+    <color name="light_blue">#12384F</color>
+    <color name="background">#101820</color>
+
+    <color name="white">#1B2630</color>
+
+    <color name="text">#F1F5F8</color>
+    <color name="muted">#AAB8C2</color>
+
+    <color name="border">#30414E</color>
+
+    <color name="success">#38B77A</color>
+    <color name="warning">#E5A83B</color>
+    <color name="danger">#FF6B5F</color>
+
+</resources>

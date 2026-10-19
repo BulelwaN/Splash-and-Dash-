@@ -1,0 +1,136 @@
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f4f6f9;
+}
+
+.header{
+background:#0c3c60;
+color:white;
+padding:20px;
+}
+
+.navbar{
+background:#082a44;
+padding:15px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-right:20px;
+font-weight:bold;
+}
+
+.container{
+width:95%;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.search-box{
+margin-bottom:20px;
+}
+
+input{
+padding:10px;
+width:300px;
+}
+
+button{
+background:#0c3c60;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#0c3c60;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+.delete-btn{
+background:#dc3545;
+padding:8px 12px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Staff</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Manage Staff</h1>
+</header>
+
+<div class="container">
+
+<h2>Add Staff Member</h2>
+
+<form method="POST">
+
+<input type="text" name="full_name" placeholder="Full Name" required>
+<input type="text" name="role" placeholder="Role" required>
+<input type="text" name="contact_number" placeholder="Contact Number" required>
+<input type="text" name="username" placeholder="Username" required>
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit" name="add_staff">Add Staff</button>
+
+</form>
+
+<h2>Staff Members</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Contact</th>
+</tr>
+
+
+<tr>
+    <td></td>
+    <td></td>
+    <td>></td>
+    <td></td>
+</tr>
+
+
+</table>
+
+</div>
+
+</body>
+</html>

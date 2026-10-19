@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "659516192570",
+    "project_id": "splashdash-98961",
+    "storage_bucket": "splashdash-98961.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659516192570:android:12a4f3e643ca3e056cc203",
+        "android_client_info": {
+          "package_name": "com.example.splashanddash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659516192570-vtan4c0mnepm34uug8ufbeg0oemhmrgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.splashanddash",
+            "certificate_hash": "9a2e919782069133c1f4a1aafaa2d496cb1c7577"
+          }
+        },
+        {
+          "client_id": "659516192570-4i64npd91345lpdliuhjb3kjt2137uaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnVi3fkiEuV-vTI4r_lxQlUJFCGFjles8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659516192570-4i64npd91345lpdliuhjb3kjt2137uaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

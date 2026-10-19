@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:url('images/carwash_banner.png');
+background-size:cover;
+}
+
+.overlay{
+background:rgba(0,0,0,.6);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:15px;
+width:400px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0c3c60;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+.error{
+background:#f8d7da;
+color:#721c24;
+padding:10px;
+margin-bottom:15px;
+border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="card">
+
+<h2>Login</h2>
+
+
+<div class="error">
+ 
+</div>
+
+
+<form method="POST">
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit" name="login">
+Login
+</button>
+
+</form>
+
+<br>
+
+<a href="register.html">Create Account</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

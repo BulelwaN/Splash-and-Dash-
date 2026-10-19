@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Service Queue</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#f4f6f9;
+}
+
+.header{
+background:#0c3c60;
+color:white;
+padding:20px;
+}
+
+.navbar{
+background:#082a44;
+padding:15px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-right:20px;
+font-weight:bold;
+}
+
+.container{
+padding:30px;
+}
+
+table{
+width:100%;
+background:white;
+border-collapse:collapse;
+}
+
+th{
+background:#0c3c60;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+select{
+padding:8px;
+}
+
+button{
+background:#0c3c60;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#14527f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Service Queue</h1>
+<p>Welcome, </p>
+</div>
+
+<!-- NAVIGATION ADDED -->
+<div class="navbar">
+
+<a href="staff - dashboard.html">Dashboard</a>
+<a href="staff - service_queue.html">Service Queue</a>
+<a href="login.html">Logout</a>
+
+</div>
+
+<div class="container">
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Vehicle</th>
+<th>Registration</th>
+<th>Service</th>
+<th>Status</th>
+<th>Update</th>
+</tr>
+
+
+
+<tr>
+
+<td></td>
+
+<td>
+
+
+<td>
+
+</td>
+
+<td>
+
+</td>
+
+<td>
+
+</td>
+
+<td>
+
+<form method="POST">
+
+<input type="hidden" name="booking_id" value="">
+
+<select name="status">
+<option>Pending</option>
+<option>In Progress</option>
+<option>Completed</option>
+</select>
+
+<button type="submit" name="update">
+Save
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+
+
+</table>
+
+</div>
+
+</body>
+</html>

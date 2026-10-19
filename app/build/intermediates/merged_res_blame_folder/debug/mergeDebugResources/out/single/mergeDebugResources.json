@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_edit_bg.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/edit_bg.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_btn_outline.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/btn_outline.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_splash_dash_logo.jpeg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/splash_dash_logo.jpeg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash6.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash6.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash12.png.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash12.png"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_rounded_card.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/rounded_card.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash1.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash1.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash8.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash8.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_gallery_callout_bg.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/gallery_callout_bg.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash2.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash2.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash10.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash10.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash11.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash11.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash13.png.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash13.png"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash.png.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash.png"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash7.webp.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash7.webp"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_gallery_image_bg.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/gallery_image_bg.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash3.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash3.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable_btn_primary.xml.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable/btn_primary.xml"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash9.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash9.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash5.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash5.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash0.png.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash0.png"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_wash4.jpg.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/wash4.jpg"
+    },
+    {
+        "merged": "com.example.splashanddash.app-debug-50:/drawable-nodpi_carwash_banner.png.flat",
+        "source": "com.example.splashanddash.app-main-52:/drawable-nodpi/carwash_banner.png"
+    }
+]
