@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SplashDash.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d97709686084aa8de243f86132dbd9f9cc7bd586")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eee945d5751d5bf848f4dc1a973dd258d3751b2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SplashDash.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SplashDash.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
