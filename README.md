@@ -49,3 +49,8 @@ Any email/password can be entered for this demo.
 `app/src/main/res/drawable-nodpi/` contains the original supplied Splash & Dash images.
 
 `website_source/` contains the original supplied HTML/CSS/images for reference.
+
+## 🎥 Demo Video
+
+Watch the SplashDash demo here:
+[Click to Watch Demo](https://youtu.be/Zxfxhz75BLs?feature=shared)
