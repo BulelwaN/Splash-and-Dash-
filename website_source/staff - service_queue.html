@@ -1,153 +1,137 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Service Queue</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Queue</title>
 
-<style>
-
-body{
-font-family:Segoe UI;
-margin:0;
-background:#f4f6f9;
-}
-
-.header{
-background:#0c3c60;
-color:white;
-padding:20px;
-}
-
-.navbar{
-background:#082a44;
-padding:15px;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-margin-right:20px;
-font-weight:bold;
-}
-
-.container{
-padding:30px;
-}
-
-table{
-width:100%;
-background:white;
-border-collapse:collapse;
-}
-
-th{
-background:#0c3c60;
-color:white;
-padding:12px;
-}
-
-td{
-padding:12px;
-border-bottom:1px solid #ddd;
-}
-
-select{
-padding:8px;
-}
-
-button{
-background:#0c3c60;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:6px;
-cursor:pointer;
-}
-
-button:hover{
-background:#14527f;
-}
-
-</style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="header">
-<h1>Service Queue</h1>
-<p>Welcome, </p>
-</div>
+    <header class="staff-header">
+        <h1>Service Queue</h1>
+        <p>Welcome, <span id="staffName"><!-- Backend: Display logged-in staff member's name --></span></p>
+    </header>
 
-<!-- NAVIGATION ADDED -->
-<div class="navbar">
+    <nav class="staff-navbar">
+        <a href="staff - dashboard.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
 
-<a href="staff - dashboard.html">Dashboard</a>
-<a href="staff - service_queue.html">Service Queue</a>
-<a href="login.html">Logout</a>
+    <main class="staff-container">
 
-</div>
+        <section class="queue-section">
+            <h2>Bookings</h2>
+            <p>View and manage customer bookings from the shared service queue.</p>
 
-<div class="container">
+            <form method="GET" action="">
+                <label for="searchBooking">Search Bookings:</label>
+                <input
+                    type="text"
+                    id="searchBooking"
+                    name="search"
+                    placeholder="Search by booking ID, customer or registration"
+                >
 
-<table>
+                <label for="statusFilter">Filter by Status:</label>
+                <select id="statusFilter" name="status">
+                    <option value="">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
 
-<tr>
-<th>ID</th>
-<th>Vehicle</th>
-<th>Registration</th>
-<th>Service</th>
-<th>Status</th>
-<th>Update</th>
-</tr>
+                <button type="submit">Search</button>
+            </form>
 
+            <div class="table-container">
+                <table class="staff-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Contact Number</th>
+                            <th>Vehicle</th>
+                            <th>Registration</th>
+                            <th>Service</th>
+                            <th>Booking Type</th>
+                            <th>Service Address</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
+                    <tbody id="bookingQueue">
 
-<tr>
+                        <!-- Backend: Display bookings from the shared queue -->
 
-<td></td>
+                        <tr>
+                            <td><!-- Booking ID --></td>
+                            <td><!-- Customer name --></td>
+                            <td><!-- Customer phone number (read-only) --></td>
+                            <td><!-- Vehicle --></td>
+                            <td><!-- Registration --></td>
+                            <td><!-- Service --></td>
+                            <td><!-- At Location / House Call --></td>
+                            <td><!-- House Call address, if applicable --></td>
+                            <td><!-- Booking date --></td>
+                            <td><!-- Booking time --></td>
+                            <td><!-- Current booking status --></td>
 
-<td>
+                            <td>
+                                <form method="POST" action="">
+                                    <input
+                                        type="hidden"
+                                        name="booking_id"
+                                        value=""
+                                    >
 
+                                    <label for="bookingStatus">Update Status:</label>
+                                    <select id="bookingStatus" name="status" required>
+                                        <option value="Pending">Pending</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
 
-<td>
+                                    <button type="submit" name="updateStatus">
+                                        Save Status
+                                    </button>
+                                </form>
 
-</td>
+                                <a href="staff - edit_booking.html?id=">
+                                    Move / Reschedule
+                                </a>
 
-<td>
+                                <form method="POST" action="">
+                                    <input
+                                        type="hidden"
+                                        name="booking_id"
+                                        value=""
+                                    >
 
-</td>
+                                    <button type="submit" name="cancelBooking">
+                                        Cancel Booking
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
 
-<td>
+                    </tbody>
+                </table>
+            </div>
 
-</td>
+        </section>
 
-<td>
+    </main>
 
-<form method="POST">
-
-<input type="hidden" name="booking_id" value="">
-
-<select name="status">
-<option>Pending</option>
-<option>In Progress</option>
-<option>Completed</option>
-</select>
-
-<button type="submit" name="update">
-Save
-</button>
-
-</form>
-
-</td>
-
-</tr>
-
-
-
-</table>
-
-</div>
+    <footer class="staff-footer">
+        <p>&copy; 2026 Splash & Dash. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

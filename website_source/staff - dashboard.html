@@ -1,94 +1,67 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Staff Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
 
-<style>
-
-body{
-font-family:Segoe UI;
-margin:0;
-background:#f4f6f9;
-}
-
-.header{
-background:#0c3c60;
-color:white;
-padding:20px;
-}
-
-.nav{
-background:#082a44;
-padding:15px;
-}
-
-.nav a{
-color:white;
-text-decoration:none;
-margin-right:20px;
-}
-
-.container{
-padding:30px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.card h2{
-font-size:40px;
-color:#0c3c60;
-}
-
-</style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="header">
-<h1>Staff Dashboard</h1>
-<p>Welcome </p>
-</div>
+    <header class="staff-header">
+        <h1>Staff Dashboard</h1>
+        <p>Welcome, <span id="staffName"><!-- Backend: Display logged-in staff member's name --></span></p>
+    </header>
 
-<div class="nav">
-<a href="staff - dashboard.html">Dashboard</a>
-<a href="staff - service_queue.html">Service Queue</a>
-<a href="login.html">Logout</a>
-</div>
+    <nav class="staff-navbar">
+        <a href="staff - service_queue.html">Service Queue</a>
+        <a href="login.html">Logout</a>
+    </nav>
 
-<div class="container">
+    <main class="staff-container">
 
-<div class="cards">
+        <section class="staff-overview">
+            <h2>Today's Overview</h2>
+            <p>View your current workload and completed services.</p>
 
-<div class="card">
-<h2></h2>
-<p>Pending Bookings</p>
-</div>
+            <div class="dashboard-cards">
 
-<div class="card">
-<h2></h2>
-<p>In Progress</p>
-</div>
+                <div class="dashboard-card">
+                    <h2 id="pendingBookings"><!-- Backend: Pending bookings count --></h2>
+                    <p>Pending Bookings</p>
+                </div>
 
-<div class="card">
-<h2></h2>
-<p>Completed Today</p>
-</div>
+                <div class="dashboard-card">
+                    <h2 id="inProgressBookings"><!-- Backend: In-progress bookings count --></h2>
+                    <p>In Progress</p>
+                </div>
 
-</div>
+                <div class="dashboard-card">
+                    <h2 id="completedToday"><!-- Backend: Completed bookings today --></h2>
+                    <p>Completed Today</p>
+                </div>
 
-</div>
+            </div>
+        </section>
+
+        <section class="staff-quick-actions">
+            <h2>Quick Actions</h2>
+
+            <div class="dashboard-actions">
+                <a href="staff - service_queue.html">
+                    View Service Queue
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="staff-footer">
+        <p>&copy; 2026 Splash & Dash. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

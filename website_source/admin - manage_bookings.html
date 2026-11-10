@@ -1,215 +1,192 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Bookings - Splash & Dash</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Manage Bookings</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#f4f6f9;
-}
-
-.header{
-    background:#0c3c60;
-    color:white;
-    padding:20px;
-}
-
-.navbar{
-    background:#082a44;
-    padding:15px;
-}
-
-.navbar a{
-    color:white;
-    text-decoration:none;
-    margin-right:20px;
-    font-weight:bold;
-}
-
-.container{
-    width:95%;
-    margin:auto;
-    padding:30px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-table th{
-    background:#0c3c60;
-    color:white;
-    padding:12px;
-}
-
-table td{
-    padding:12px;
-    border-bottom:1px solid #ddd;
-}
-
-select{
-    padding:8px;
-}
-
-button{
-    background:#0c3c60;
-    color:white;
-    border:none;
-    padding:8px 15px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-.pending{
-    background:#ffc107;
-    padding:6px 12px;
-    border-radius:20px;
-}
-
-.progress{
-    background:#17a2b8;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-}
-
-.completed{
-    background:#28a745;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-}
-
-</style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<div class="header">
-    <h1>Manage Bookings</h1>
-</div>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div>
+                <h1>Manage Bookings</h1>
+                <p>View and manage customer bookings.</p>
+            </div>
 
-<div class="navbar">
-    <a href="admin - dashboard.html">Dashboard</a>
-    <a href="admin - manage_customers.html">Customers</a>
-    <a href="admin - manage_bookings.html">Bookings</a>
-    <a href="admin - manage_staff.html">Staff</a>
-    <a href="admin - reports.html">Reports</a>
-    <a href="login.html">Logout</a>
-</div>
+            <div class="admin-profile">
+                <span>Administrator</span>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
 
-<div class="container">
+    <!-- Admin Navigation -->
+    <nav class="admin-navbar" aria-label="Admin navigation">
+        <a href="admin - dashboard.html">Dashboard</a>
+        <a href="admin - manage_customers.html">Customers</a>
+        <a href="admin - manage_staff.html">Staff</a>
+        <a href="admin - reports.html">Reports</a>
+    </nav>
 
-<div class="card">
+    <main class="admin-container">
 
-<h2>Booking Management</h2>
+        <!-- Booking Overview -->
+        <section class="dashboard-section">
 
-<br>
+            <div class="section-heading">
+                <h2>Booking Management</h2>
+                <p>Monitor bookings, manage schedules and track service progress.</p>
+            </div>
 
-<table>
+            <div class="stats-grid">
 
-<tr>
+                <div class="stat-card">
+                    <!-- Backend: Count all bookings. -->
+                    <h3 id="total-bookings">--</h3>
+                    <p>Total Bookings</p>
+                </div>
 
-<th>ID</th>
-<th>Customer ID</th>
-<th>Vehicle</th>
-<th>Registration</th>
-<th>Service</th>
-<th>Date</th>
-<th>Time</th>
-<th>Status</th>
-<th>Update</th>
+                <div class="stat-card">
+                    <!-- Backend: Count pending bookings. -->
+                    <h3 id="pending-bookings">--</h3>
+                    <p>Pending</p>
+                </div>
 
-</tr>
+                <div class="stat-card">
+                    <!-- Backend: Count bookings currently being serviced. -->
+                    <h3 id="in-progress-bookings">--</h3>
+                    <p>In Progress</p>
+                </div>
 
+                <div class="stat-card">
+                    <!-- Backend: Count completed bookings. -->
+                    <h3 id="completed-bookings">--</h3>
+                    <p>Completed</p>
+                </div>
 
+            </div>
 
-<tr>
+        </section>
 
-<td></td>
+        <!-- Search and Filters -->
+        <section class="dashboard-section">
 
-<td></td>
+            <div class="section-heading">
+                <h2>All Bookings</h2>
+                <p>Search and filter customer bookings.</p>
+            </div>
 
-<td>
+            <!-- Backend: Connect search and filters to booking records. -->
+            <form class="filter-form" method="GET">
 
-</td>
+                <div class="form-group">
+                    <label for="booking-search">Search Bookings</label>
+                    <input
+                        type="search"
+                        id="booking-search"
+                        name="search"
+                        placeholder="Search by booking ID, customer or registration">
+                </div>
 
-<td>
+                <div class="form-group">
+                    <label for="booking-status">Booking Status</label>
+                    <select id="booking-status" name="status">
+                        <option value="">All Statuses</option>
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
 
-</td>
+                <div class="form-group">
+                    <label for="booking-type">Booking Type</label>
+                    <select id="booking-type" name="booking_type">
+                        <option value="">All Booking Types</option>
+                        <option value="At Location">At Location</option>
+                        <option value="House Call">House Call</option>
+                    </select>
+                </div>
 
-<td>
+                <div class="form-group">
+                    <label for="booking-date">Booking Date</label>
+                    <input type="date" id="booking-date" name="date">
+                </div>
 
-</td>
+                <button type="submit">Apply Filters</button>
 
-<td>
+            </form>
 
-</td>
+        </section>
 
-<td>
+        <!-- Booking Records -->
+        <section class="dashboard-section">
 
-</td>
+            <div class="table-container">
 
-<td>
+                <table class="admin-table">
 
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Contact Number</th>
+                            <th>Vehicle</th>
+                            <th>Registration</th>
+                            <th>Service</th>
+                            <th>Booking Type</th>
+                            <th>Service Address</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
+                    <tbody id="booking-records">
 
-</td>
+                        <!-- Backend: Retrieve and display booking records here. -->
+                        <tr>
+                            <td colspan="12">
+                                Booking records will appear here.
+                            </td>
+                        </tr>
 
-<td>
+                    </tbody>
 
-<form method="POST">
+                </table>
 
-<input
-type="hidden"
-name="booking_id"
-value="">
+            </div>
 
-<select name="status">
+        </section>
 
-<option>Pending</option>
-<option>In Progress</option>
-<option>Completed</option>
+        <!-- Booking Management Notes -->
+        <section class="dashboard-section">
 
-</select>
+            <div class="section-heading">
+                <h2>Booking Management Information</h2>
+            </div>
 
-<button
-type="submit"
-name="update_status">
+            <ul>
+                <li>At Location bookings are completed at the Splash & Dash premises.</li>
+                <li>House Call bookings require the customer's service address.</li>
+                <li>All staff members share the same service queue.</li>
+                <li>Bookings can be rescheduled or removed.</li>
+                <li>Booking statuses can be updated as the service progresses.</li>
+                <li>Customer profile information must not be edited from this page.</li>
+            </ul>
 
-Save
+        </section>
 
-</button>
+    </main>
 
-</form>
-
-</td>
-
-</tr>
-
-
-
-</table>
-
-</div>
-
-</div>
+    <footer class="admin-footer">
+        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+    </footer>
 
 </body>
 </html>
