@@ -11,7 +11,16 @@ public class Booking
     public Customer? Customer { get; set; }
 
     [Required, MaxLength(100)]
+    public string VehicleMake { get; set; } = string.Empty;
+
+    [Required, MaxLength(100)]
+    public string VehicleModel { get; set; } = string.Empty;
+
+    [Required, MaxLength(100)]
     public string VehicleRegistration { get; set; } = string.Empty;
+
+    [Required, MaxLength(50)]
+    public string VehicleType { get; set; } = string.Empty;
 
     [Required, MaxLength(100)]
     public string ServiceType { get; set; } = string.Empty;

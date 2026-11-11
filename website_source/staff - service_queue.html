@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <title>Service Queue</title>
@@ -89,7 +89,7 @@ background:#14527f;
 
 <div class="container">
 
-<table>
+<table id="serviceQueueTable">
 
 <tr>
 <th>ID</th>
@@ -102,46 +102,7 @@ background:#14527f;
 
 
 
-<tr>
 
-<td></td>
-
-<td>
-
-
-<td>
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-</td>
-
-<td>
-
-<form method="POST">
-
-<input type="hidden" name="booking_id" value="">
-
-<select name="status">
-<option>Pending</option>
-<option>In Progress</option>
-<option>Completed</option>
-</select>
-
-<button type="submit" name="update">
-Save
-</button>
-
-</form>
-
-</td>
-
-</tr>
 
 
 
@@ -149,5 +110,6 @@ Save
 
 </div>
 
+    <script src="js/staff-queue.js"></script>
 </body>
 </html>

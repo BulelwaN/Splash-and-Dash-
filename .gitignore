@@ -6,3 +6,34 @@
 .externalNativeBuild/
 .cxx/
 *.iml
+
+# .NET build files
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Android / Gradle
+.gradle/
+local.properties
+.idea/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.example.json
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
