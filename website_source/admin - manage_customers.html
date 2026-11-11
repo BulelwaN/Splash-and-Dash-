@@ -1,186 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Manage Customers - Splash &amp; Dash Admin Portal</title>
 
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Manage Customers</title>
-
-<style>
-
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#f4f6f9;
-}
-
-.header{
-background:#0c3c60;
-color:white;
-padding:20px;
-}
-
-.navbar{
-background:#082a44;
-padding:15px;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-margin-right:20px;
-font-weight:bold;
-}
-
-.container{
-width:95%;
-margin:auto;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.search-box{
-margin-bottom:20px;
-}
-
-input{
-padding:10px;
-width:300px;
-}
-
-button{
-background:#0c3c60;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:8px;
-cursor:pointer;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-table th{
-background:#0c3c60;
-color:white;
-padding:12px;
-}
-
-table td{
-padding:12px;
-border-bottom:1px solid #ddd;
-}
-
-.delete-btn{
-background:#dc3545;
-padding:8px 12px;
-border-radius:6px;
-text-decoration:none;
-color:white;
-}
-
-</style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<div class="header">
-<h1>Manage Customers</h1>
-</div>
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Admins can view customer contact information but must NOT edit customer profiles here.
+        - Admins can deactivate or reactivate accounts. Deactivating must not remove booking history.
+        - A customer's bookings are managed on the Bookings page.
+        - Staff have no access to this page.
+    -->
 
-<div class="navbar">
+    <header class="admin-header">
+        <div class="header-content">
+            <div>
+                <span class="portal-label">Admin Portal</span>
+                <h1>Manage Customers</h1>
+                <p>View registered customers. Customers sign up in the mobile app.</p>
+            </div>
 
-    <a href="index.html">Home</a>
-<a href="admin - dashboard.html">Dashboard</a>
-<a href="admin - manage_customers.html">Customers</a>
-<a href="admin - manage_bookings.html">Bookings</a>
-<a href="admin - manage_staff.html">Staff</a>
-<a href="admin - reports.html">Reports</a>
-<a href="login.html">Logout</a>
+            <div class="admin-profile">
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
+    </header>
 
-</div>
+    <nav class="admin-navbar" aria-label="Admin navigation">
+        <a href="admin - dashboard.html">Dashboard</a>
+        <a href="admin - manage_bookings.html">Bookings</a>
+        <a href="admin - manage_staff.html">Staff</a>
+        <a href="admin - reports.html">Reports</a>
+    </nav>
 
-<div class="container">
+    <main class="admin-container">
 
-<div class="card">
+        <!-- Customer Overview -->
+        <section class="dashboard-section">
 
-<form method="POST" class="search-box">
+            <div class="section-heading">
+                <h2>Customer Overview</h2>
+                <p>View registered customer accounts.</p>
+            </div>
 
-<input
-type="text"
-name="search_term"
-placeholder="Search customer...">
+            <div class="stats-grid">
 
-<button
-type="submit"
-name="search">
+                <div class="stat-card">
+                    <!-- Backend: count all registered customers -->
+                    <strong id="total-customers">--</strong>
+                    <p>Total Customers</p>
+                </div>
 
-Search
+                <div class="stat-card">
+                    <!-- Backend: count active customer accounts -->
+                    <strong id="active-customers">--</strong>
+                    <p>Active Customers</p>
+                </div>
 
-</button>
+                <div class="stat-card">
+                    <!-- Backend: count deactivated customer accounts -->
+                    <strong id="inactive-customers">--</strong>
+                    <p>Inactive Customers</p>
+                </div>
 
-</form>
+            </div>
 
-<table>
+        </section>
 
-<tr>
+        <!-- Customer Records -->
+        <section class="dashboard-section">
 
-<th>ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Action</th>
+            <div class="section-heading">
+                <h2>Customer Records</h2>
+                <p>Search and view customer information.</p>
+            </div>
 
-</tr>
+            <!-- Backend: search customers by name, email or phone number -->
+            <form method="GET" class="search-form">
 
+                <div class="form-group">
+                    <label for="customer-search">Search Customers</label>
+                    <input
+                        type="search"
+                        id="customer-search"
+                        name="search"
+                        placeholder="Enter name, email or phone number">
+                </div>
 
+                <div class="form-group">
+                    <label for="account-status">Account Status</label>
+                    <select id="account-status" name="status">
+                        <option value="">All Accounts</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
 
-<tr>
+                <button type="submit">Search</button>
 
-<td>
+            </form>
 
-</td>
+            <div class="table-container">
 
-<td>
+                <table class="admin-table">
 
-</td>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Total Bookings</th>
+                            <th>Account Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
-<td>
+                    <tbody id="customer-records">
 
-</td>
+                        <!-- Backend: for each customer returned by the API, copy this row template
+                             into this table body and remove the placeholder row below. -->
+                        <template id="customer-row-template">
+                            <tr>
+                            <td><!-- Customer ID --></td>
+                            <td><!-- Full name --></td>
+                            <td><!-- Email address --></td>
+                            <td><!-- Phone number --></td>
+                            <td><!-- Total bookings --></td>
+                            <td><!-- Active / Inactive --></td>
+                            <td>
+                                <!-- Backend: deactivate the account. Booking history must be kept. -->
+                                <form method="POST" onsubmit="return confirm('Deactivate this customer account? Their booking history is kept.')">
+                                    <input type="hidden" name="customer_id" value="">
+                                    <button type="submit" name="deactivateCustomer">Deactivate</button>
+                                </form>
 
-<td>
+                                <!-- Backend: show Reactivate instead of Deactivate when the account is inactive -->
+                                <form method="POST">
+                                    <input type="hidden" name="customer_id" value="">
+                                    <button type="submit" name="reactivateCustomer">Reactivate</button>
+                                </form>
+                            </td>
+                            </tr>
+                        </template>
 
-<a
-class="delete-btn"
-href=""
-onclick="return confirm('Delete Customer?')">
+                        <tr>
+                            <td colspan="7">
+                                Customer records will appear here.
+                            </td>
+                        </tr>
 
-Delete
+                    </tbody>
 
-</a>
+                </table>
 
-</td>
+            </div>
 
-</tr>
+        </section>
 
+    </main>
 
-
-</table>
-
-</div>
-
-</div>
+    <footer class="admin-footer">
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
+    </footer>
 
 </body>
 </html>

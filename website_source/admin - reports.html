@@ -1,232 +1,230 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Reports - Splash &amp; Dash Admin Portal</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Reports</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#f4f6f9;
-}
-
-.header{
-    background:#0c3c60;
-    color:white;
-    padding:20px;
-}
-
-.navbar{
-    background:#082a44;
-    padding:15px;
-}
-
-.navbar a{
-    color:white;
-    text-decoration:none;
-    margin-right:20px;
-    font-weight:bold;
-}
-
-.container{
-    width:95%;
-    margin:auto;
-    padding:30px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-bottom:30px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    padding:25px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.card h2{
-    color:#0c3c60;
-    font-size:36px;
-}
-
-.report-section{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    margin-bottom:30px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-table th{
-    background:#0c3c60;
-    color:white;
-    padding:12px;
-}
-
-table td{
-    padding:12px;
-    border-bottom:1px solid #ddd;
-}
-
-.print-btn{
-    background:#0c3c60;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.print-btn:hover{
-    background:#14527f;
-}
-
-@media print{
-    .navbar,
-    .print-btn{
-        display:none;
-    }
-}
-
-</style>
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<div class="header">
-    <h1>System Reports</h1>
-    <p>Administrative Reporting Dashboard</p>
-</div>
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Revenue means COMPLETED bookings only (same definition as the dashboard). Cancelled bookings never count as revenue.
+        - Printing: when the style pass happens, hide the header, navigation and buttons with @media print.
+    -->
 
-<div class="navbar">
+    <header class="admin-header">
+        <div class="header-content">
+            <div>
+                <span class="portal-label">Admin Portal</span>
+                <h1>System Reports</h1>
+                <p>Review business performance and generate reports.</p>
+            </div>
 
-    <a href="index.html">Home</a>
-<a href="admin - dashboard.html">Dashboard</a>
-<a href="admin - manage_customers.html">Customers</a>
-<a href="admin - manage_bookings.html">Bookings</a>
-<a href="admin - manage_staff.html">Staff</a>
-<a href="admin - reports.html">Reports</a>
-<a href="login.html">Logout</a>
+            <div class="admin-profile">
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
+    </header>
 
-</div>
+    <nav class="admin-navbar" aria-label="Admin navigation">
+        <a href="admin - dashboard.html">Dashboard</a>
+        <a href="admin - manage_bookings.html">Bookings</a>
+        <a href="admin - manage_customers.html">Customers</a>
+        <a href="admin - manage_staff.html">Staff</a>
+    </nav>
 
-<div class="container">
+    <main class="admin-container">
 
-<button class="print-btn" onclick="window.print()">
-Print Report
-</button>
+        <!-- Report Filters -->
+        <section class="dashboard-section">
 
-<br><br>
+            <div class="section-heading">
+                <h2>Generate Reports</h2>
+                <p>Select a date range to view business performance.</p>
+            </div>
 
-<div class="stats">
+            <!-- Backend: apply the selected dates to all report queries -->
+            <form method="GET" class="filter-form">
 
-<div class="card">
-<h2></h2>
-<p>Total Customers</p>
-</div>
+                <div class="form-group">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" name="start_date" required>
+                </div>
 
-<div class="card">
-<h2></h2>
-<p>Total Bookings</p>
-</div>
+                <div class="form-group">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" name="end_date" required>
+                </div>
 
-<div class="card">
-<h2></h2>
-<p>Total Staff</p>
-</div>
+                <button type="submit">Generate Reports</button>
 
-<div class="card">
-<h2>R</h2>
-<p>Total Revenue</p>
-</div>
+            </form>
 
-</div>
+            <button type="button" class="print-btn" onclick="window.print()">
+                Print Reports
+            </button>
 
-<!-- ================= SERVICE REPORT ================= -->
+        </section>
 
-<div class="report-section">
+        <!-- Report Summary -->
+        <section class="dashboard-section">
 
-<h2>Service Popularity Report</h2>
+            <div class="section-heading">
+                <h2>Report Summary</h2>
+                <p>Summary for the selected reporting period.</p>
+            </div>
 
-<br>
+            <div class="stats-grid">
 
-<table>
+                <div class="stat-card">
+                    <!-- Backend: count completed bookings in the selected period -->
+                    <strong id="period-bookings">--</strong>
+                    <p>Completed Bookings</p>
+                </div>
 
-<tr>
-<th>Service</th>
-<th>Total Bookings</th>
-</tr>
+                <div class="stat-card">
+                    <!-- Backend: calculate revenue from completed bookings -->
+                    <strong id="period-revenue">R --</strong>
+                    <p>Revenue Generated</p>
+                </div>
 
+                <div class="stat-card">
+                    <!-- Backend: identify the most frequently booked service -->
+                    <strong id="popular-service">--</strong>
+                    <p>Most Popular Service</p>
+                </div>
 
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
- 
+            </div>
 
+        </section>
 
+        <!-- Service Popularity Report -->
+        <section class="dashboard-section report-section">
 
-<tr>
-    <td colspan="2">No data available</td>
-</tr>
+            <div class="section-heading">
+                <h2>Service Popularity Report</h2>
+                <p>Identify which services customers book most frequently.</p>
+            </div>
 
+            <div class="table-container">
 
+                <table class="admin-table">
 
-</table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Total Bookings</th>
+                            <th>Percentage of Bookings</th>
+                        </tr>
+                    </thead>
 
-</div>
+                    <tbody id="service-report">
 
-<!-- ================= STATUS REPORT ================= -->
+                        <!-- Backend: group bookings by service and calculate percentages -->
+                        <tr>
+                            <td colspan="3">Service report data will appear here.</td>
+                        </tr>
 
-<div class="report-section">
+                    </tbody>
 
-<h2>Booking Status Report</h2>
+                </table>
 
-<br>
+            </div>
 
-<table>
+        </section>
 
-<tr>
-<th>Status</th>
-<th>Total</th>
-</tr>
+        <!-- Revenue Report -->
+        <section class="dashboard-section report-section">
 
+            <div class="section-heading">
+                <h2>Revenue Report</h2>
+                <p>Review revenue generated from completed bookings.</p>
+            </div>
 
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
+            <div class="table-container">
 
+                <table class="admin-table">
 
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Completed Bookings</th>
+                            <th>Revenue Generated</th>
+                        </tr>
+                    </thead>
 
+                    <tbody id="revenue-report">
 
-<tr>
-    <td colspan="2">No data available</td>
-</tr>
+                        <!-- Backend: group completed booking revenue by service -->
+                        <tr>
+                            <td colspan="3">Revenue report data will appear here.</td>
+                        </tr>
 
+                    </tbody>
 
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th id="total-completed-bookings">--</th>
+                            <th id="total-revenue">R --</th>
+                        </tr>
+                    </tfoot>
 
-</table>
+                </table>
 
-</div>
+            </div>
 
-</div>
+        </section>
+
+        <!-- Booking Status Report -->
+        <section class="dashboard-section report-section">
+
+            <div class="section-heading">
+                <h2>Booking Status Report</h2>
+                <p>View how bookings are distributed across different statuses.</p>
+            </div>
+
+            <div class="table-container">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>Booking Status</th>
+                            <th>Total Bookings</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="status-report">
+
+                        <!-- Backend: group bookings by status (Pending, In Progress, Completed, Cancelled) within the selected period -->
+                        <tr>
+                            <td colspan="3">Booking status data will appear here.</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="admin-footer">
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
+    </footer>
 
 </body>
 </html>

@@ -1,136 +1,283 @@
-<style>
-
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#f4f6f9;
-}
-
-.header{
-background:#0c3c60;
-color:white;
-padding:20px;
-}
-
-.navbar{
-background:#082a44;
-padding:15px;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-margin-right:20px;
-font-weight:bold;
-}
-
-.container{
-width:95%;
-margin:auto;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.search-box{
-margin-bottom:20px;
-}
-
-input{
-padding:10px;
-width:300px;
-}
-
-button{
-background:#0c3c60;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:8px;
-cursor:pointer;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-table th{
-background:#0c3c60;
-color:white;
-padding:12px;
-}
-
-table td{
-padding:12px;
-border-bottom:1px solid #ddd;
-}
-
-.delete-btn{
-background:#dc3545;
-padding:8px 12px;
-border-radius:6px;
-text-decoration:none;
-color:white;
-}
-
-</style>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Manage Staff</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Manage Staff - Splash &amp; Dash Admin Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <h1>Manage Staff</h1>
-</header>
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Staff cannot register themselves: admins create every account with a TEMPORARY password.
+        - New accounts must set their own password at first login (MustChangePassword = true).
+        - The login is the username. Email is for contact and password resets.
+        - An admin cannot deactivate themselves or the last active admin.
+    -->
 
-<div class="container">
+    <header class="admin-header">
+        <div class="header-content">
+            <div>
+                <span class="portal-label">Admin Portal</span>
+                <h1>Manage Staff</h1>
+                <p>Add and manage Splash &amp; Dash staff accounts.</p>
+            </div>
 
-<h2>Add Staff Member</h2>
+            <div class="admin-profile">
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
+    </header>
 
-<form method="POST">
+    <nav class="admin-navbar" aria-label="Admin navigation">
+        <a href="admin - dashboard.html">Dashboard</a>
+        <a href="admin - manage_bookings.html">Bookings</a>
+        <a href="admin - manage_customers.html">Customers</a>
+        <a href="admin - reports.html">Reports</a>
+    </nav>
 
-<input type="text" name="full_name" placeholder="Full Name" required>
-<input type="text" name="role" placeholder="Role" required>
-<input type="text" name="contact_number" placeholder="Contact Number" required>
-<input type="text" name="username" placeholder="Username" required>
-<input type="password" name="password" placeholder="Password" required>
+    <main class="admin-container">
 
-<button type="submit" name="add_staff">Add Staff</button>
+        <!-- Staff Overview -->
+        <section class="dashboard-section">
 
-</form>
+            <div class="section-heading">
+                <h2>Staff Overview</h2>
+                <p>Monitor your staff accounts.</p>
+            </div>
 
-<h2>Staff Members</h2>
+            <div class="stats-grid">
 
-<table>
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Contact</th>
-</tr>
+                <div class="stat-card">
+                    <!-- Backend: count all staff accounts -->
+                    <strong id="total-staff">--</strong>
+                    <p>Total Staff Members</p>
+                </div>
 
+                <div class="stat-card">
+                    <!-- Backend: count active staff accounts -->
+                    <strong id="active-staff">--</strong>
+                    <p>Active Staff</p>
+                </div>
 
-<tr>
-    <td></td>
-    <td></td>
-    <td>></td>
-    <td></td>
-</tr>
+                <div class="stat-card">
+                    <!-- Backend: count inactive staff accounts -->
+                    <strong id="inactive-staff">--</strong>
+                    <p>Inactive Staff</p>
+                </div>
 
+            </div>
 
-</table>
+        </section>
 
-</div>
+        <!-- Add Staff -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Add Staff Member</h2>
+                <p>Create a new staff account for the management system.</p>
+            </div>
+
+            <!-- Backend: create the account, securely hash the temporary password and set MustChangePassword = true.
+                 Username must be unique. -->
+            <form method="POST" class="staff-form" id="add-staff-form">
+
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="full_name"
+                        placeholder="Enter full name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="staff-email">Email Address</label>
+                    <input
+                        type="email"
+                        id="staff-email"
+                        name="email"
+                        placeholder="Enter email address"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-number">Contact Number</label>
+                    <input
+                        type="tel"
+                        id="contact-number"
+                        name="contact_number"
+                        placeholder="Enter contact number"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Create username"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="staff-role">Role</label>
+                    <select id="staff-role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="temporary-password">Temporary Password</label>
+                    <!-- Shown as plain text on purpose: the admin needs to pass it on to the staff member.
+                         Backend (optional): generate it on the server and show it once instead. -->
+                    <input
+                        type="text"
+                        id="temporary-password"
+                        name="password"
+                        placeholder="At least 8 characters"
+                        minlength="8"
+                        autocomplete="off"
+                        required>
+                    <p class="form-hint">Give this to the staff member. They must change it the first time they log in.</p>
+                </div>
+
+                <button type="submit" name="add_staff">
+                    Add Staff Member
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Staff Records -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Staff Members</h2>
+                <p>View and manage existing staff accounts.</p>
+            </div>
+
+            <form method="GET" class="search-form">
+
+                <div class="form-group">
+                    <label for="staff-search">Search Staff</label>
+                    <input
+                        type="search"
+                        id="staff-search"
+                        name="search"
+                        placeholder="Search by name, username or email">
+                </div>
+
+                <div class="form-group">
+                    <label for="staff-status">Account Status</label>
+                    <select id="staff-status" name="status">
+                        <option value="">All Accounts</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <button type="submit">Search</button>
+
+            </form>
+
+            <div class="table-container">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Contact Number</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Account Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="staff-records">
+
+                        <!-- Backend: for each staff member returned by the API, copy this row template
+                             into this table body and remove the placeholder row below. -->
+                        <template id="staff-row-template">
+                            <tr>
+                            <td><!-- Staff ID --></td>
+                            <td><!-- Full name --></td>
+                            <td><!-- Email --></td>
+                            <td><!-- Contact number --></td>
+                            <td><!-- Username --></td>
+                            <td><!-- Staff / Admin --></td>
+                            <td><!-- Active / Inactive --></td>
+                            <td>
+                                <div class="row-actions">
+                                    <!-- Backend: set a new temporary password; the staff member must change it at next login -->
+                                    <details>
+                                        <summary>Reset password</summary>
+                                        <form method="POST">
+                                            <input type="hidden" name="staff_id" value="">
+                                            <input
+                                                type="text"
+                                                name="new_temporary_password"
+                                                aria-label="New temporary password"
+                                                placeholder="New temporary password"
+                                                minlength="8"
+                                                autocomplete="off"
+                                                required>
+                                            <button type="submit" name="resetPassword">Reset</button>
+                                        </form>
+                                    </details>
+
+                                    <!-- Backend: refuse to deactivate yourself or the last active admin -->
+                                    <form method="POST" onsubmit="return confirm('Deactivate this staff member?')">
+                                        <input type="hidden" name="staff_id" value="">
+                                        <button type="submit" name="deactivateStaff">Deactivate</button>
+                                    </form>
+
+                                    <!-- Backend: show Reactivate instead of Deactivate when the account is inactive -->
+                                    <form method="POST">
+                                        <input type="hidden" name="staff_id" value="">
+                                        <button type="submit" name="reactivateStaff">Reactivate</button>
+                                    </form>
+                                </div>
+                            </td>
+                            </tr>
+                        </template>
+
+                        <tr>
+                            <td colspan="8">
+                                Staff records will appear here.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="admin-footer">
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
+    </footer>
 
 </body>
 </html>
