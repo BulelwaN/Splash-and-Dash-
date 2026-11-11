@@ -1,25 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Staff - Splash & Dash</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Manage Staff - Splash &amp; Dash Admin Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Staff cannot register themselves: admins create every account with a TEMPORARY password.
+        - New accounts must set their own password at first login (MustChangePassword = true).
+        - The login is the username. Email is for contact and password resets.
+        - An admin cannot deactivate themselves or the last active admin.
+    -->
+
     <header class="admin-header">
         <div class="header-content">
             <div>
+                <span class="portal-label">Admin Portal</span>
                 <h1>Manage Staff</h1>
-                <p>Add and manage Splash & Dash staff accounts.</p>
+                <p>Add and manage Splash &amp; Dash staff accounts.</p>
             </div>
 
             <div class="admin-profile">
-                <span>Administrator</span>
-                <a href="login.html">Logout</a>
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
             </div>
         </div>
     </header>
@@ -44,20 +57,20 @@
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <!-- Backend: Count all staff accounts. -->
-                    <h3 id="total-staff">--</h3>
+                    <!-- Backend: count all staff accounts -->
+                    <strong id="total-staff">--</strong>
                     <p>Total Staff Members</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count active staff accounts. -->
-                    <h3 id="active-staff">--</h3>
+                    <!-- Backend: count active staff accounts -->
+                    <strong id="active-staff">--</strong>
                     <p>Active Staff</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count inactive staff accounts. -->
-                    <h3 id="inactive-staff">--</h3>
+                    <!-- Backend: count inactive staff accounts -->
+                    <strong id="inactive-staff">--</strong>
                     <p>Inactive Staff</p>
                 </div>
 
@@ -73,7 +86,8 @@
                 <p>Create a new staff account for the management system.</p>
             </div>
 
-            <!-- Backend: Create the staff account and securely hash its temporary password. -->
+            <!-- Backend: create the account, securely hash the temporary password and set MustChangePassword = true.
+                 Username must be unique. -->
             <form method="POST" class="staff-form" id="add-staff-form">
 
                 <div class="form-group">
@@ -127,12 +141,17 @@
 
                 <div class="form-group">
                     <label for="temporary-password">Temporary Password</label>
+                    <!-- Shown as plain text on purpose: the admin needs to pass it on to the staff member.
+                         Backend (optional): generate it on the server and show it once instead. -->
                     <input
-                        type="password"
+                        type="text"
                         id="temporary-password"
                         name="password"
-                        placeholder="Enter temporary password"
+                        placeholder="At least 8 characters"
+                        minlength="8"
+                        autocomplete="off"
                         required>
+                    <p class="form-hint">Give this to the staff member. They must change it the first time they log in.</p>
                 </div>
 
                 <button type="submit" name="add_staff">
@@ -194,7 +213,52 @@
 
                     <tbody id="staff-records">
 
-                        <!-- Backend: Retrieve staff records from the database. -->
+                        <!-- Backend: for each staff member returned by the API, copy this row template
+                             into this table body and remove the placeholder row below. -->
+                        <template id="staff-row-template">
+                            <tr>
+                            <td><!-- Staff ID --></td>
+                            <td><!-- Full name --></td>
+                            <td><!-- Email --></td>
+                            <td><!-- Contact number --></td>
+                            <td><!-- Username --></td>
+                            <td><!-- Staff / Admin --></td>
+                            <td><!-- Active / Inactive --></td>
+                            <td>
+                                <div class="row-actions">
+                                    <!-- Backend: set a new temporary password; the staff member must change it at next login -->
+                                    <details>
+                                        <summary>Reset password</summary>
+                                        <form method="POST">
+                                            <input type="hidden" name="staff_id" value="">
+                                            <input
+                                                type="text"
+                                                name="new_temporary_password"
+                                                aria-label="New temporary password"
+                                                placeholder="New temporary password"
+                                                minlength="8"
+                                                autocomplete="off"
+                                                required>
+                                            <button type="submit" name="resetPassword">Reset</button>
+                                        </form>
+                                    </details>
+
+                                    <!-- Backend: refuse to deactivate yourself or the last active admin -->
+                                    <form method="POST" onsubmit="return confirm('Deactivate this staff member?')">
+                                        <input type="hidden" name="staff_id" value="">
+                                        <button type="submit" name="deactivateStaff">Deactivate</button>
+                                    </form>
+
+                                    <!-- Backend: show Reactivate instead of Deactivate when the account is inactive -->
+                                    <form method="POST">
+                                        <input type="hidden" name="staff_id" value="">
+                                        <button type="submit" name="reactivateStaff">Reactivate</button>
+                                    </form>
+                                </div>
+                            </td>
+                            </tr>
+                        </template>
+
                         <tr>
                             <td colspan="8">
                                 Staff records will appear here.
@@ -212,7 +276,7 @@
     </main>
 
     <footer class="admin-footer">
-        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>

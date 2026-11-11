@@ -1,25 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Reports - Splash & Dash</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Reports - Splash &amp; Dash Admin Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Revenue means COMPLETED bookings only (same definition as the dashboard). Cancelled bookings never count as revenue.
+        - Printing: when the style pass happens, hide the header, navigation and buttons with @media print.
+    -->
+
     <header class="admin-header">
         <div class="header-content">
             <div>
+                <span class="portal-label">Admin Portal</span>
                 <h1>System Reports</h1>
                 <p>Review business performance and generate reports.</p>
             </div>
 
             <div class="admin-profile">
-                <span>Administrator</span>
-                <a href="login.html">Logout</a>
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
             </div>
         </div>
     </header>
@@ -41,7 +52,7 @@
                 <p>Select a date range to view business performance.</p>
             </div>
 
-            <!-- Backend: Apply selected dates to all report queries. -->
+            <!-- Backend: apply the selected dates to all report queries -->
             <form method="GET" class="filter-form">
 
                 <div class="form-group">
@@ -75,20 +86,20 @@
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <!-- Backend: Count completed bookings in the selected period. -->
-                    <h3 id="period-bookings">--</h3>
+                    <!-- Backend: count completed bookings in the selected period -->
+                    <strong id="period-bookings">--</strong>
                     <p>Completed Bookings</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Calculate revenue from completed bookings. -->
-                    <h3 id="period-revenue">R --</h3>
+                    <!-- Backend: calculate revenue from completed bookings -->
+                    <strong id="period-revenue">R --</strong>
                     <p>Revenue Generated</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Identify the most frequently booked service. -->
-                    <h3 id="popular-service">--</h3>
+                    <!-- Backend: identify the most frequently booked service -->
+                    <strong id="popular-service">--</strong>
                     <p>Most Popular Service</p>
                 </div>
 
@@ -118,7 +129,7 @@
 
                     <tbody id="service-report">
 
-                        <!-- Backend: Group bookings by service and calculate percentages. -->
+                        <!-- Backend: group bookings by service and calculate percentages -->
                         <tr>
                             <td colspan="3">Service report data will appear here.</td>
                         </tr>
@@ -153,7 +164,7 @@
 
                     <tbody id="revenue-report">
 
-                        <!-- Backend: Group completed booking revenue by service. -->
+                        <!-- Backend: group completed booking revenue by service -->
                         <tr>
                             <td colspan="3">Revenue report data will appear here.</td>
                         </tr>
@@ -196,7 +207,7 @@
 
                     <tbody id="status-report">
 
-                        <!-- Backend: Group bookings by status within the selected period. -->
+                        <!-- Backend: group bookings by status (Pending, In Progress, Completed, Cancelled) within the selected period -->
                         <tr>
                             <td colspan="3">Booking status data will appear here.</td>
                         </tr>
@@ -212,7 +223,7 @@
     </main>
 
     <footer class="admin-footer">
-        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>

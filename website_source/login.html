@@ -1,39 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Staff Login - Splash &amp; Dash</title>
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body class="auth-page">
 
-<body>
+    <!--
+        STAFF AND ADMIN LOGIN ONLY. Customers do not log in on the website - they use the mobile app.
+        This page is NOT linked from the public site. Staff reach it through a hidden trigger (to be decided).
 
-<div class="overlay">
+        Backend: check the username and password.
+          - Deactivated accounts must be refused.
+          - MustChangePassword = true  -> go to change_password.html
+          - role = Admin               -> go to "admin - dashboard.html"
+          - role = Staff               -> go to "staff - dashboard.html"
+        Show the error message below when the login fails.
+    -->
 
-<div class="card">
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1>Staff Login</h1>
+            <p>Splash &amp; Dash staff and admin portal.</p>
 
-<h2>Staff Login</h2>
+            <div class="error-message" hidden>
+                <!-- Backend: error message, e.g. "Incorrect username or password." -->
+            </div>
 
+            <form method="POST">
 
-<div class="error">
- 
-</div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        autocomplete="username"
+                        required>
+                </div>
 
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        required>
+                </div>
 
-<form method="POST">
+                <button type="submit" name="login">Login</button>
 
-<input type="email" name="email" placeholder="Email Address" required>
+            </form>
 
-<input type="password" name="password" placeholder="Password" required>
-
-<button type="submit" name="login">
-Login
-</button>
-
-</form>
-
-</div>
-
-</div>
+            <a class="back-link" href="index.html">&larr; Back to website</a>
+        </div>
+    </main>
 
 </body>
 </html>

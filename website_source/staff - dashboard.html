@@ -1,66 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Staff Dashboard - Splash &amp; Dash Staff Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Staff role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Counts below are for TODAY only. All staff share one queue (bookings are not assigned per person).
+    -->
+
     <header class="staff-header">
-        <h1>Staff Dashboard</h1>
-        <p>Welcome, <span id="staffName"><!-- Backend: Display logged-in staff member's name --></span></p>
+        <div class="header-content">
+            <div>
+                <span class="portal-label">Staff Portal</span>
+                <h1>Staff Dashboard</h1>
+                <p>Today's bookings across the shared service queue.</p>
+            </div>
+
+            <div class="staff-profile">
+                <span>Welcome, <span id="staffName"><!-- Backend: display the logged-in staff's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
     </header>
 
-    <nav class="staff-navbar">
+    <nav class="staff-navbar" aria-label="Staff navigation">
         <a href="staff - service_queue.html">Service Queue</a>
-        <a href="login.html">Logout</a>
     </nav>
 
     <main class="staff-container">
 
         <section class="staff-overview">
             <h2>Today's Overview</h2>
-            <p>View your current workload and completed services.</p>
+            <p>Bookings for today across the shared service queue.</p>
 
             <div class="dashboard-cards">
 
                 <div class="dashboard-card">
-                    <h2 id="pendingBookings"><!-- Backend: Pending bookings count --></h2>
-                    <p>Pending Bookings</p>
+                    <!-- Backend: count today's bookings with status Pending -->
+                    <strong id="pendingBookings">--</strong>
+                    <p>Pending Today</p>
                 </div>
 
                 <div class="dashboard-card">
-                    <h2 id="inProgressBookings"><!-- Backend: In-progress bookings count --></h2>
+                    <!-- Backend: count today's bookings with status In Progress -->
+                    <strong id="inProgressBookings">--</strong>
                     <p>In Progress</p>
                 </div>
 
                 <div class="dashboard-card">
-                    <h2 id="completedToday"><!-- Backend: Completed bookings today --></h2>
+                    <!-- Backend: count today's bookings with status Completed -->
+                    <strong id="completedToday">--</strong>
                     <p>Completed Today</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <!-- Backend: count today's bookings with booking type House Call -->
+                    <strong id="houseCallsToday">--</strong>
+                    <p>House Calls Today</p>
                 </div>
 
             </div>
         </section>
 
-        <section class="staff-quick-actions">
-            <h2>Quick Actions</h2>
+        <section class="staff-next-up">
+            <h2>Next Up Today</h2>
+            <p>Today's bookings in time order.</p>
 
-            <div class="dashboard-actions">
-                <a href="staff - service_queue.html">
-                    View Service Queue
-                </a>
+            <div class="table-container">
+                <table class="staff-table">
+
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Customer</th>
+                            <th>Vehicle</th>
+                            <th>Service</th>
+                            <th>Booking Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="next-up">
+
+                        <!-- Backend: display today's bookings ordered by time. Leave out Cancelled bookings. -->
+                        <tr>
+                            <td colspan="6">
+                                Today's bookings will appear here.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
             </div>
         </section>
 
     </main>
 
     <footer class="staff-footer">
-        <p>&copy; 2026 Splash & Dash. All rights reserved.</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>

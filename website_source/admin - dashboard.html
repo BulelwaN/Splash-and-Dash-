@@ -1,31 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Splash & Dash</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Dashboard - Splash &amp; Dash Admin Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Admin Header -->
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Total Revenue = sum of Price for COMPLETED bookings (same definition on the Reports page).
+    -->
+
     <header class="admin-header">
         <div class="header-content">
             <div>
+                <span class="portal-label">Admin Portal</span>
                 <h1>Admin Dashboard</h1>
-                <p>Welcome, Administrator</p>
+                <p>A summary of your car wash operations.</p>
             </div>
 
             <div class="admin-profile">
-                <span>Administrator</span>
-                <a href="login.html">Logout</a>
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
             </div>
         </div>
     </header>
 
-    <!-- Admin Navigation -->
     <nav class="admin-navbar" aria-label="Admin navigation">
         <a href="admin - manage_bookings.html">Bookings</a>
         <a href="admin - manage_customers.html">Customers</a>
@@ -45,75 +53,39 @@
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <!-- Backend: Retrieve total registered customers. -->
-                    <h3 id="total-customers">--</h3>
+                    <!-- Backend: retrieve total registered customers -->
+                    <strong id="total-customers">--</strong>
                     <p>Total Customers</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Retrieve all booking records. -->
-                    <h3 id="total-bookings">--</h3>
+                    <!-- Backend: retrieve all booking records -->
+                    <strong id="total-bookings">--</strong>
                     <p>Total Bookings</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count bookings scheduled for today. -->
-                    <h3 id="todays-bookings">--</h3>
+                    <!-- Backend: count bookings scheduled for today -->
+                    <strong id="todays-bookings">--</strong>
                     <p>Today's Bookings</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count bookings awaiting service. -->
-                    <h3 id="pending-bookings">--</h3>
+                    <!-- Backend: count bookings awaiting service -->
+                    <strong id="pending-bookings">--</strong>
                     <p>Pending Bookings</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Retrieve active staff members. -->
-                    <h3 id="total-staff">--</h3>
+                    <!-- Backend: retrieve active staff members -->
+                    <strong id="total-staff">--</strong>
                     <p>Active Staff Members</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Calculate revenue from completed bookings. -->
-                    <h3 id="total-revenue">R --</h3>
+                    <!-- Backend: calculate revenue from completed bookings -->
+                    <strong id="total-revenue">R --</strong>
                     <p>Total Revenue</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Quick Actions -->
-        <section class="dashboard-section">
-            <div class="section-heading">
-                <h2>Quick Actions</h2>
-                <p>Access the main management sections.</p>
-            </div>
-
-            <div class="quick-actions">
-
-                <div class="action-card">
-                    <h3>Manage Customers</h3>
-                    <p>View customer profiles and contact information.</p>
-                    <a href="admin - manage_customers.html">Open</a>
-                </div>
-
-                <div class="action-card">
-                    <h3>Manage Bookings</h3>
-                    <p>View, reschedule and manage customer bookings.</p>
-                    <a href="admin - manage_bookings.html">Open</a>
-                </div>
-
-                <div class="action-card">
-                    <h3>Manage Staff</h3>
-                    <p>Add staff members and manage their accounts.</p>
-                    <a href="admin - manage_staff.html">Open</a>
-                </div>
-
-                <div class="action-card">
-                    <h3>View Reports</h3>
-                    <p>Review business performance and booking statistics.</p>
-                    <a href="admin - reports.html">Open</a>
                 </div>
 
             </div>
@@ -134,14 +106,14 @@
                             <th>Customer</th>
                             <th>Service</th>
                             <th>Booking Type</th>
-                            <th>Date & Time</th>
+                            <th>Date &amp; Time</th>
                             <th>Status</th>
                         </tr>
                     </thead>
 
                     <tbody id="recent-bookings">
 
-                        <!-- Backend: Display the latest booking records here. -->
+                        <!-- Backend: display the latest booking records here -->
                         <tr>
                             <td colspan="6">
                                 Booking records will appear here.
@@ -151,16 +123,12 @@
                     </tbody>
                 </table>
             </div>
-
-            <a href="admin - manage_bookings.html" class="view-all-link">
-                View All Bookings
-            </a>
         </section>
 
     </main>
 
     <footer class="admin-footer">
-        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>

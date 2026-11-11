@@ -1,31 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Bookings - Splash & Dash</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Manage Bookings - Splash &amp; Dash Admin Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Admin Header -->
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - At Location bookings happen at the Splash & Dash premises. House Call bookings need the customer's service address.
+        - All staff share the same service queue (no per-staff assignment).
+        - Bookings can be moved (date/time), cancelled (status becomes Cancelled; the record is kept) and have their status updated.
+        - Customer profile information must NOT be edited from this page.
+        - Price is shown here (Admin only).
+    -->
+
     <header class="admin-header">
         <div class="header-content">
             <div>
+                <span class="portal-label">Admin Portal</span>
                 <h1>Manage Bookings</h1>
                 <p>View and manage customer bookings.</p>
             </div>
 
             <div class="admin-profile">
-                <span>Administrator</span>
-                <a href="login.html">Logout</a>
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
             </div>
         </div>
     </header>
 
-    <!-- Admin Navigation -->
     <nav class="admin-navbar" aria-label="Admin navigation">
         <a href="admin - dashboard.html">Dashboard</a>
         <a href="admin - manage_customers.html">Customers</a>
@@ -46,34 +58,40 @@
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <!-- Backend: Count all bookings. -->
-                    <h3 id="total-bookings">--</h3>
+                    <!-- Backend: count all bookings -->
+                    <strong id="total-bookings">--</strong>
                     <p>Total Bookings</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count pending bookings. -->
-                    <h3 id="pending-bookings">--</h3>
+                    <!-- Backend: count pending bookings -->
+                    <strong id="pending-bookings">--</strong>
                     <p>Pending</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count bookings currently being serviced. -->
-                    <h3 id="in-progress-bookings">--</h3>
+                    <!-- Backend: count bookings currently being serviced -->
+                    <strong id="in-progress-bookings">--</strong>
                     <p>In Progress</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count completed bookings. -->
-                    <h3 id="completed-bookings">--</h3>
+                    <!-- Backend: count completed bookings -->
+                    <strong id="completed-bookings">--</strong>
                     <p>Completed</p>
+                </div>
+
+                <div class="stat-card">
+                    <!-- Backend: count cancelled bookings -->
+                    <strong id="cancelled-bookings">--</strong>
+                    <p>Cancelled</p>
                 </div>
 
             </div>
 
         </section>
 
-        <!-- Search and Filters -->
+        <!-- Search, Filters and Booking Records -->
         <section class="dashboard-section">
 
             <div class="section-heading">
@@ -81,7 +99,7 @@
                 <p>Search and filter customer bookings.</p>
             </div>
 
-            <!-- Backend: Connect search and filters to booking records. -->
+            <!-- Backend: connect the search and filters to the booking records -->
             <form class="filter-form" method="GET">
 
                 <div class="form-group">
@@ -100,6 +118,7 @@
                         <option value="Pending">Pending</option>
                         <option value="In Progress">In Progress</option>
                         <option value="Completed">Completed</option>
+                        <option value="Cancelled">Cancelled</option>
                     </select>
                 </div>
 
@@ -114,17 +133,13 @@
 
                 <div class="form-group">
                     <label for="booking-date">Booking Date</label>
+                    <!-- Backend: default this date to today -->
                     <input type="date" id="booking-date" name="date">
                 </div>
 
                 <button type="submit">Apply Filters</button>
 
             </form>
-
-        </section>
-
-        <!-- Booking Records -->
-        <section class="dashboard-section">
 
             <div class="table-container">
 
@@ -134,14 +149,11 @@
                         <tr>
                             <th>Booking ID</th>
                             <th>Customer</th>
-                            <th>Contact Number</th>
                             <th>Vehicle</th>
-                            <th>Registration</th>
                             <th>Service</th>
                             <th>Booking Type</th>
-                            <th>Service Address</th>
-                            <th>Date</th>
-                            <th>Time</th>
+                            <th>Date &amp; Time</th>
+                            <th>Price</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -149,9 +161,68 @@
 
                     <tbody id="booking-records">
 
-                        <!-- Backend: Retrieve and display booking records here. -->
+                        <!-- Price is returned for the Admin role only. -->
+                        <!-- Backend: for each booking returned by the API, copy this row template
+                             into this table body and remove the placeholder row below. -->
+                        <template id="booking-row-template">
+                            <tr>
+                            <td><!-- Booking ID --></td>
+                            <td>
+                                <span class="cell-main"><!-- Customer name --></span>
+                                <span class="cell-sub"><!-- Customer phone number (read-only) --></span>
+                            </td>
+                            <td>
+                                <span class="cell-main"><!-- Vehicle --></span>
+                                <span class="cell-sub"><!-- Registration number --></span>
+                            </td>
+                            <td><!-- Service --></td>
+                            <td>
+                                <span class="cell-main"><!-- At Location / House Call --></span>
+                                <span class="cell-sub"><!-- Service address (House Call only) --></span>
+                            </td>
+                            <td>
+                                <span class="cell-main"><!-- Booking date --></span>
+                                <span class="cell-sub"><!-- Booking time --></span>
+                            </td>
+                            <td><!-- Price (R) --></td>
+                            <td><!-- Current booking status --></td>
+                            <td>
+                                <div class="row-actions">
+                                    <!-- Backend: update the booking's status -->
+                                    <form method="POST">
+                                        <input type="hidden" name="booking_id" value="">
+                                        <select name="status" aria-label="Booking status" required>
+                                            <option value="Pending">Pending</option>
+                                            <option value="In Progress">In Progress</option>
+                                            <option value="Completed">Completed</option>
+                                        </select>
+                                        <button type="submit" name="updateStatus">Save Status</button>
+                                    </form>
+
+                                    <!-- Backend: move = change the booking's date and time only -->
+                                    <details>
+                                        <summary>Move booking</summary>
+                                        <form method="POST">
+                                            <input type="hidden" name="booking_id" value="">
+                                            <input type="date" name="new_date" aria-label="New date" required>
+                                            <input type="time" name="new_time" aria-label="New time" required>
+                                            <button type="submit" name="moveBooking">Move</button>
+                                        </form>
+                                    </details>
+
+                                    <!-- Backend: set the booking's status to Cancelled and keep the record.
+                                         Hide all of these actions for bookings that are already Cancelled. -->
+                                    <form method="POST" onsubmit="return confirm('Cancel this booking?')">
+                                        <input type="hidden" name="booking_id" value="">
+                                        <button type="submit" name="cancelBooking">Cancel Booking</button>
+                                    </form>
+                                </div>
+                            </td>
+                            </tr>
+                        </template>
+
                         <tr>
-                            <td colspan="12">
+                            <td colspan="9">
                                 Booking records will appear here.
                             </td>
                         </tr>
@@ -164,28 +235,10 @@
 
         </section>
 
-        <!-- Booking Management Notes -->
-        <section class="dashboard-section">
-
-            <div class="section-heading">
-                <h2>Booking Management Information</h2>
-            </div>
-
-            <ul>
-                <li>At Location bookings are completed at the Splash & Dash premises.</li>
-                <li>House Call bookings require the customer's service address.</li>
-                <li>All staff members share the same service queue.</li>
-                <li>Bookings can be rescheduled or removed.</li>
-                <li>Booking statuses can be updated as the service progresses.</li>
-                <li>Customer profile information must not be edited from this page.</li>
-            </ul>
-
-        </section>
-
     </main>
 
     <footer class="admin-footer">
-        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>

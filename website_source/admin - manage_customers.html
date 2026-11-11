@@ -1,31 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Customers - Splash & Dash</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Manage Customers - Splash &amp; Dash Admin Portal</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Admin Header -->
+    <!--
+        NOTES FOR THE TEAM (see BACKEND_NOTES.md for the full list)
+        - ACCESS: Admin role only. The API must check the logged-in role on every request.
+          Hiding the link is not security.
+        - Admins can view customer contact information but must NOT edit customer profiles here.
+        - Admins can deactivate or reactivate accounts. Deactivating must not remove booking history.
+        - A customer's bookings are managed on the Bookings page.
+        - Staff have no access to this page.
+    -->
+
     <header class="admin-header">
         <div class="header-content">
             <div>
+                <span class="portal-label">Admin Portal</span>
                 <h1>Manage Customers</h1>
-                <p>View and manage registered customers.</p>
+                <p>View registered customers. Customers sign up in the mobile app.</p>
             </div>
 
             <div class="admin-profile">
-                <span>Administrator</span>
-                <a href="login.html">Logout</a>
+                <span>Welcome, <span id="adminName"><!-- Backend: display the logged-in admin's name --></span></span>
+                <a href="change_password.html">Change Password</a>
+                <!-- Backend: Logout must end the session/token, then go to the public home page -->
+                <a href="index.html">Logout</a>
             </div>
         </div>
     </header>
 
-    <!-- Admin Navigation -->
     <nav class="admin-navbar" aria-label="Admin navigation">
         <a href="admin - dashboard.html">Dashboard</a>
         <a href="admin - manage_bookings.html">Bookings</a>
@@ -46,20 +57,20 @@
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <!-- Backend: Count all registered customers. -->
-                    <h3 id="total-customers">--</h3>
+                    <!-- Backend: count all registered customers -->
+                    <strong id="total-customers">--</strong>
                     <p>Total Customers</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count active customer accounts. -->
-                    <h3 id="active-customers">--</h3>
+                    <!-- Backend: count active customer accounts -->
+                    <strong id="active-customers">--</strong>
                     <p>Active Customers</p>
                 </div>
 
                 <div class="stat-card">
-                    <!-- Backend: Count deactivated customer accounts. -->
-                    <h3 id="inactive-customers">--</h3>
+                    <!-- Backend: count deactivated customer accounts -->
+                    <strong id="inactive-customers">--</strong>
                     <p>Inactive Customers</p>
                 </div>
 
@@ -75,7 +86,7 @@
                 <p>Search and view customer information.</p>
             </div>
 
-            <!-- Backend: Search customers by name, email or phone number. -->
+            <!-- Backend: search customers by name, email or phone number -->
             <form method="GET" class="search-form">
 
                 <div class="form-group">
@@ -118,7 +129,32 @@
 
                     <tbody id="customer-records">
 
-                        <!-- Backend: Retrieve customer records and booking counts. -->
+                        <!-- Backend: for each customer returned by the API, copy this row template
+                             into this table body and remove the placeholder row below. -->
+                        <template id="customer-row-template">
+                            <tr>
+                            <td><!-- Customer ID --></td>
+                            <td><!-- Full name --></td>
+                            <td><!-- Email address --></td>
+                            <td><!-- Phone number --></td>
+                            <td><!-- Total bookings --></td>
+                            <td><!-- Active / Inactive --></td>
+                            <td>
+                                <!-- Backend: deactivate the account. Booking history must be kept. -->
+                                <form method="POST" onsubmit="return confirm('Deactivate this customer account? Their booking history is kept.')">
+                                    <input type="hidden" name="customer_id" value="">
+                                    <button type="submit" name="deactivateCustomer">Deactivate</button>
+                                </form>
+
+                                <!-- Backend: show Reactivate instead of Deactivate when the account is inactive -->
+                                <form method="POST">
+                                    <input type="hidden" name="customer_id" value="">
+                                    <button type="submit" name="reactivateCustomer">Reactivate</button>
+                                </form>
+                            </td>
+                            </tr>
+                        </template>
+
                         <tr>
                             <td colspan="7">
                                 Customer records will appear here.
@@ -133,27 +169,10 @@
 
         </section>
 
-        <!-- Customer Management Information -->
-        <section class="dashboard-section">
-
-            <div class="section-heading">
-                <h2>Customer Management Information</h2>
-            </div>
-
-            <ul>
-                <li>Administrators can view customer contact information.</li>
-                <li>Customer profile information must not be edited from this page.</li>
-                <li>Administrators can deactivate or reactivate customer accounts.</li>
-                <li>Deactivating an account must not remove its existing booking history.</li>
-                <li>Customer booking information can be accessed through Manage Bookings.</li>
-            </ul>
-
-        </section>
-
     </main>
 
     <footer class="admin-footer">
-        <p>&copy; 2026 Splash & Dash Car Wash Management System</p>
+        <p>&copy; 2026 Splash &amp; Dash Car Wash Management System</p>
     </footer>
 
 </body>
