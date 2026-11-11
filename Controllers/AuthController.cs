@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -97,6 +98,93 @@ public class AuthController : ControllerBase
         });
     }
 
+    [Authorize(Roles = "Staff,Admin")]
+    [HttpPost("change-password")]
+    public async Task<IActionResult> ChangePassword(
+        ChangePasswordRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.CurrentPassword) ||
+            string.IsNullOrWhiteSpace(request.NewPassword))
+        {
+            return BadRequest(new
+            {
+                message = "Current password and new password are required."
+            });
+        }
+
+        if (request.NewPassword.Length < 8)
+        {
+            return BadRequest(new
+            {
+                message = "New password must contain at least 8 characters."
+            });
+        }
+
+        if (request.NewPassword == request.CurrentPassword)
+        {
+            return BadRequest(new
+            {
+                message = "Your new password must be different from your current password."
+            });
+        }
+
+        string? idValue = User.FindFirstValue(
+            ClaimTypes.NameIdentifier);
+
+        string? role = User.FindFirstValue(ClaimTypes.Role);
+
+        if (!int.TryParse(idValue, out int accountId) ||
+            (role != "Staff" && role != "Admin"))
+        {
+            return Unauthorized(new
+            {
+                message = "Invalid account authentication."
+            });
+        }
+
+        var staff = await _context.StaffAccounts
+            .FirstOrDefaultAsync(s => s.Id == accountId);
+
+        if (staff == null || !staff.IsActive || staff.Role != role)
+        {
+            return Unauthorized(new
+            {
+                message = "Staff account could not be verified."
+            });
+        }
+
+        var verification = _staffHasher.VerifyHashedPassword(
+            staff,
+            staff.PasswordHash,
+            request.CurrentPassword);
+
+        if (verification == PasswordVerificationResult.Failed)
+        {
+            return BadRequest(new
+            {
+                message = "Current password is incorrect."
+            });
+        }
+
+        staff.PasswordHash = _staffHasher.HashPassword(
+            staff,
+            request.NewPassword);
+
+        staff.MustChangePassword = false;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new
+        {
+            message = "Password changed successfully.",
+            login = CreateLoginResponse(
+                staff.Id,
+                staff.FullName,
+                staff.Email,
+                staff.Role,
+                false)
+        });
+    }
     private IActionResult AuthenticateStaff(
         StaffAccount staff,
         string password)
@@ -207,4 +295,10 @@ public class LoginRequest
 {
     public string Identifier { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
+}
+
+public class ChangePasswordRequest
+{
+    public string CurrentPassword { get; set; } = string.Empty;
+    public string NewPassword { get; set; } = string.Empty;
 }
