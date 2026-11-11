@@ -1,0 +1,493 @@
+
+/* ========================================
+   SPLASH & DASH - UNIVERSAL STYLES
+   Shared across the entire website
+======================================== */
+
+:root {
+    --white: #FFFFFF;
+    --ice-blue: #EEF6FC;
+    --sky-blue: #7CC8F5;
+    --ocean-blue: #0B7FE0;
+    --deep-ocean-blue: #003B5C;
+    --indigo-blue: #00416A;
+
+    --text-dark: #243746;
+    --text-muted: #708397;
+    --border: #D6E5F1;
+
+    --success: #218653;
+    --success-bg: #E9F7EF;
+    --warning: #C58A20;
+    --warning-bg: #FFF5DF;
+    --danger: #C74646;
+    --danger-bg: #FCECEC;
+    --neutral: #718096;
+    --neutral-bg: #EDF1F5;
+
+    --shadow: 0 5px 18px rgba(0, 59, 92, 0.09);
+    --shadow-hover: 0 9px 24px rgba(0, 59, 92, 0.14);
+
+    --radius: 12px;
+    --radius-small: 8px;
+    --transition: 0.25s ease;
+}
+
+/* General reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--ocean-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--deep-ocean-blue);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--deep-ocean-blue);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+/* Portal labels - Admin and Staff */
+
+.portal-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border-radius: 30px;
+    background: var(--ice-blue);
+    color: var(--sky-blue);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Universal buttons */
+
+button,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    background: var(--ocean-blue);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover,
+.btn:hover {
+    background: var(--indigo-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary {
+    background: var(--ocean-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--indigo-blue);
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--indigo-blue);
+    border-color: var(--white);
+}
+
+.btn-light:hover {
+    background: var(--ice-blue);
+    color: var(--deep-ocean-blue);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--sky-blue);
+    outline-offset: 3px;
+}
+
+/* Forms */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+label {
+    color: var(--deep-ocean-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--white);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9AAABA;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--sky-blue);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--ocean-blue);
+    box-shadow: 0 0 0 3px rgba(11, 127, 224, 0.10);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--ocean-blue);
+}
+
+/* Forms and search layouts */
+
+.search-form,
+.filter-form {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 20px;
+    margin-bottom: 24px;
+    background: var(--ice-blue);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.search-form .form-group,
+.filter-form .form-group {
+    flex: 1 1 170px;
+}
+
+/* Universal cards */
+
+.stat-card,
+.dashboard-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 23px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stat-card:hover,
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-card strong,
+.dashboard-card strong {
+    display: block;
+    color: var(--indigo-blue);
+    font-size: 1.9rem;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.stat-card p,
+.dashboard-card p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Tables */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 15px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--ice-blue);
+    color: var(--deep-ocean-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+td {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #F8FBFE;
+}
+
+tfoot th {
+    background: var(--ice-blue);
+}
+
+/* Table text */
+
+.cell-main {
+    display: block;
+    color: var(--deep-ocean-blue);
+    font-weight: 600;
+}
+
+.cell-sub {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+/* Booking status badges */
+
+.status,
+.status-badge {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-pending {
+    color: var(--warning);
+    background: var(--warning-bg);
+}
+
+.status-in-progress {
+    color: var(--ocean-blue);
+    background: var(--ice-blue);
+}
+
+.status-completed {
+    color: var(--success);
+    background: var(--success-bg);
+}
+
+.status-cancelled {
+    color: var(--danger);
+    background: var(--danger-bg);
+}
+
+.status-active {
+    color: var(--success);
+    background: var(--success-bg);
+}
+
+.status-inactive {
+    color: var(--neutral);
+    background: var(--neutral-bg);
+}
+
+/* Login and authentication pages */
+
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
+    background:
+        radial-gradient(circle at top right, var(--ice-blue), transparent 45%),
+        var(--ice-blue);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
+
+.auth-card {
+    padding: 40px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 59, 92, 0.13);
+}
+
+.auth-card h1 {
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 1.9rem;
+}
+
+.auth-card > p {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 5px;
+    padding: 13px;
+}
+
+.auth-card .form-hint {
+    padding: 12px;
+    background: var(--ice-blue);
+    border-left: 3px solid var(--sky-blue);
+    border-radius: 5px;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.back-link {
+    display: block;
+    margin-top: 22px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.error-message {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    color: var(--danger);
+    background: var(--danger-bg);
+    border: 1px solid #F2CACA;
+    border-radius: var(--radius-small);
+    font-size: 0.9rem;
+}
+
+.error-message[hidden] {
+    display: none;
+}
+
+/* Responsive behaviour */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .search-form,
+    .filter-form {
+        align-items: stretch;
+    }
+
+    .search-form button,
+    .filter-form button {
+        width: 100%;
+    }
+
+    .stat-card,
+    .dashboard-card {
+        padding: 18px;
+    }
+}
