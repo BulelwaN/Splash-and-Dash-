@@ -4,6 +4,7 @@ object AppData {
 
     data class Booking(
         var id: Long, // Changed from Int to Long to prevent overflow
+        var docId: String = "",
         var vehicle: String,
         var reg: String,
         var service: String,

@@ -18,6 +18,21 @@ open class BaseActivity : AppCompatActivity() {
     // Shared Colours
     // ---------------------------------------------------------
 
+    protected val indigoBlue: Int
+        get() = getColor(R.color.indigo_blue)
+
+    protected val deepOceanBlue: Int
+        get() = getColor(R.color.deep_ocean_blue)
+
+    protected val oceanBlue: Int
+        get() = getColor(R.color.ocean_blue)
+
+    protected val skyBlue: Int
+        get() = getColor(R.color.sky_blue)
+
+    protected val iceBlue: Int
+        get() = getColor(R.color.ice_blue)
+
     protected val navy: Int
         get() = getColor(R.color.navy)
 
@@ -182,48 +197,33 @@ open class BaseActivity : AppCompatActivity() {
     protected fun navBar(): LinearLayout {
 
         val navigation = LinearLayout(this).apply {
-
             orientation = LinearLayout.HORIZONTAL
-
             gravity = Gravity.CENTER_VERTICAL
-
             setPadding(
+                dp(16),
                 dp(12),
-                dp(10),
-                dp(12),
-                dp(10)
+                dp(16),
+                dp(12)
             )
 
             background = GradientDrawable(
                 GradientDrawable.Orientation.LEFT_RIGHT,
                 intArrayOf(
-                    navy,
-                    blue
+                    deepOceanBlue,
+                    oceanBlue
                 )
             ).apply {
-
-                cornerRadius =
-                    dp(18).toFloat()
+                cornerRadius = dp(20).toFloat()
             }
         }
 
-        // ---------------------------------------------------------
         // APP NAME
-        // ---------------------------------------------------------
-
         val logo = TextView(this).apply {
-
             text = "SplashDash"
-
-            textSize = 19f
-
+            textSize = 20f
             setTextColor(Color.WHITE)
-
-            typeface =
-                Typeface.DEFAULT_BOLD
-
-            gravity =
-                Gravity.CENTER_VERTICAL
+            typeface = Typeface.DEFAULT_BOLD
+            gravity = Gravity.CENTER_VERTICAL
         }
 
         navigation.addView(
@@ -235,23 +235,12 @@ open class BaseActivity : AppCompatActivity() {
             )
         )
 
-        // ---------------------------------------------------------
-        // SETTINGS ONLY
-        // ---------------------------------------------------------
-
-        val settingsButton =
-            navButton("⚙ Settings")
-
+        // SETTINGS BUTTON
+        val settingsButton = navButton("⚙ Settings")
         settingsButton.setOnClickListener {
-
-            go(
-                SettingsActivity::class.java
-            )
+            go(SettingsActivity::class.java)
         }
-
-        navigation.addView(
-            settingsButton
-        )
+        navigation.addView(settingsButton)
 
         return navigation
     }
@@ -267,10 +256,13 @@ open class BaseActivity : AppCompatActivity() {
             setTextColor(Color.WHITE)
             gravity = Gravity.CENTER
             typeface = Typeface.DEFAULT_BOLD
-            setPadding(dp(10), dp(8), dp(10), dp(8))
+            setPadding(dp(12), dp(8), dp(12), dp(8))
+            background = GradientDrawable().apply {
+                setColor(Color.parseColor("#20FFFFFF"))
+                cornerRadius = dp(12).toFloat()
+            }
             isClickable = true
             isFocusable = true
-            alpha = 0.95f
         }
     }
 
@@ -317,13 +309,13 @@ open class BaseActivity : AppCompatActivity() {
     ): LinearLayout {
         val header = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(dp(4), dp(22), dp(4), dp(18))
+            setPadding(dp(4), dp(18), dp(4), dp(14))
         }
 
         val titleView = TextView(this).apply {
             text = title
-            textSize = 28f
-            setTextColor(textColor)
+            textSize = 26f
+            setTextColor(oceanBlue)
             typeface = Typeface.DEFAULT_BOLD
         }
         header.addView(titleView)
@@ -331,9 +323,9 @@ open class BaseActivity : AppCompatActivity() {
         if (!subtitle.isNullOrBlank()) {
             val subtitleView = TextView(this).apply {
                 text = subtitle
-                textSize = 15f
+                textSize = 14f
                 setTextColor(muted)
-                setPadding(0, dp(6), 0, 0)
+                setPadding(0, dp(4), 0, 0)
             }
             header.addView(subtitleView)
         }
@@ -344,10 +336,10 @@ open class BaseActivity : AppCompatActivity() {
     open fun sectionTitle(title: String): TextView {
         return TextView(this).apply {
             text = title
-            textSize = 15f
-            setTextColor(brightBlue)
+            textSize = 16f
+            setTextColor(skyBlue)
             typeface = Typeface.DEFAULT_BOLD
-            setPadding(0, dp(12), 0, dp(10))
+            setPadding(0, dp(12), 0, dp(8))
         }
     }
 
@@ -387,14 +379,14 @@ open class BaseActivity : AppCompatActivity() {
         container.addView(TextView(this).apply {
             text = title
             textSize = 17f
-            setTextColor(textColor)
+            setTextColor(oceanBlue)
             typeface = Typeface.DEFAULT_BOLD
         })
 
         container.addView(TextView(this).apply {
             text = body
             textSize = 14f
-            setTextColor(muted)
+            setTextColor(textColor)
             setPadding(0, dp(6), 0, dp(6))
         })
 
@@ -405,10 +397,14 @@ open class BaseActivity : AppCompatActivity() {
                 gravity = Gravity.END
                 addView(TextView(this@BaseActivity).apply {
                     text = btnLabel
-                    textSize = 14f
-                    setTextColor(brightBlue)
+                    textSize = 13f
+                    setTextColor(Color.WHITE)
                     typeface = Typeface.DEFAULT_BOLD
-                    setPadding(dp(8), dp(4), dp(8), dp(4))
+                    setPadding(dp(14), dp(6), dp(14), dp(6))
+                    background = GradientDrawable().apply {
+                        setColor(skyBlue)
+                        cornerRadius = dp(10).toFloat()
+                    }
                 })
             })
             if (onClick != null) {
@@ -425,7 +421,45 @@ open class BaseActivity : AppCompatActivity() {
         title: String,
         value: String
     ): LinearLayout {
-        val card = card().apply {
+        return metricCardValueLabel(value, title)
+    }
+
+    protected fun metricCardValueLabel(
+        value: String,
+        label: String
+    ): LinearLayout {
+        return LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = Gravity.CENTER
+            setPadding(dp(16), dp(16), dp(16), dp(16))
+            background = GradientDrawable().apply {
+                setColor(iceBlue)
+                setStroke(dp(1), border)
+                cornerRadius = dp(16).toFloat()
+            }
+            val valueView = TextView(this@BaseActivity).apply {
+                text = value
+                textSize = 26f
+                setTextColor(oceanBlue)
+                typeface = Typeface.DEFAULT_BOLD
+                gravity = Gravity.CENTER
+            }
+            addView(valueView)
+
+            val labelView = TextView(this@BaseActivity).apply {
+                text = label
+                textSize = 13f
+                setTextColor(muted)
+                gravity = Gravity.CENTER
+                setPadding(0, dp(4), 0, 0)
+            }
+            addView(labelView)
+        }
+    }
+
+    protected fun metricRow(vararg cards: View): LinearLayout {
+        return LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -433,25 +467,12 @@ open class BaseActivity : AppCompatActivity() {
                 setMargins(0, dp(6), 0, dp(12))
             }
             layoutParams = params
+            cards.forEach { card ->
+                addView(card, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f).apply {
+                    setMargins(dp(4), 0, dp(4), 0)
+                })
+            }
         }
-
-        val valueView = TextView(this).apply {
-            text = value
-            textSize = 28f
-            setTextColor(brightBlue)
-            typeface = Typeface.DEFAULT_BOLD
-        }
-        card.addView(valueView)
-
-        val titleView = TextView(this).apply {
-            text = title
-            textSize = 14f
-            setTextColor(muted)
-            setPadding(0, dp(5), 0, 0)
-        }
-        card.addView(titleView)
-
-        return card
     }
 
 

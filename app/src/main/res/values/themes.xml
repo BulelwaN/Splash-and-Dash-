@@ -10,13 +10,13 @@
         <item name="fontFamily">sans-serif</item>
 
         <!-- Application colors -->
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorSecondary">@color/bright_blue</item>
+        <item name="colorPrimary">@color/ocean_blue</item>
+        <item name="colorSecondary">@color/sky_blue</item>
 
         <!-- Android system colors -->
-        <item name="android:colorAccent">@color/bright_blue</item>
-        <item name="android:statusBarColor">@color/blue</item>
-        <item name="android:navigationBarColor">@color/navy</item>
+        <item name="android:colorAccent">@color/sky_blue</item>
+        <item name="android:statusBarColor">@color/ocean_blue</item>
+        <item name="android:navigationBarColor">@color/deep_ocean_blue</item>
 
         <!-- Status bar appearance -->
         <item name="android:windowLightStatusBar">false</item>

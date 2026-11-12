@@ -1,7 +1,6 @@
 package com.example.splashanddash
 
 import android.os.Bundle
-import android.widget.LinearLayout
 
 class AdminDashboardActivity : BaseActivity() {
 
@@ -11,6 +10,9 @@ class AdminDashboardActivity : BaseActivity() {
         val screen = content()
         val main = column()
 
+        // TOP NAVIGATION BAR
+        main.addView(navBar())
+
         main.addView(
             sectionTitle(
                 "Admin Dashboard",
@@ -18,52 +20,35 @@ class AdminDashboardActivity : BaseActivity() {
             )
         )
 
-        // ---------------------------------------------------------
-        // SUMMARY
-        // ---------------------------------------------------------
-
+        // BUSINESS OVERVIEW METRICS
         main.addView(
             text(
                 "Business Overview",
-                20f,
+                18f,
                 true
             )
         )
 
+        val totalBookings = AppData.bookings.size.toString()
+        val totalRevenue = "R${AppData.bookings.sumOf { it.price }}"
+
         main.addView(
-            metricCard(
-                AppData.bookings.size.toString(),
-                "Total Bookings"
+            metricRow(
+                metricCard("Total Bookings", totalBookings),
+                metricCard("Customers", "12"),
+                metricCard("Staff Members", "5")
             )
         )
 
         main.addView(
-            metricCard(
-                "12",
-                "Total Customers"
+            metricRow(
+                metricCard("Total Revenue", totalRevenue)
             )
         )
 
-        main.addView(
-            metricCard(
-                "5",
-                "Staff Members"
-            )
-        )
+        addSpacing(main, 10)
 
-        main.addView(
-            metricCard(
-                "R${AppData.bookings.sumOf { it.price }}",
-                "Total Revenue"
-            )
-        )
-
-        addVerticalSpace(main, 12)
-
-        // ---------------------------------------------------------
         // QUICK ACTIONS
-        // ---------------------------------------------------------
-
         main.addView(
             sectionTitle(
                 "Quick Actions",
@@ -111,7 +96,7 @@ class AdminDashboardActivity : BaseActivity() {
             }
         )
 
-        addVerticalSpace(main, 10)
+        addSpacing(main, 10)
 
         main.addView(
             outlineButton("LOG OUT") {
@@ -121,9 +106,7 @@ class AdminDashboardActivity : BaseActivity() {
         )
 
         main.addView(footer())
-
         screen.addView(main)
-
         setContentView(screen)
     }
 }

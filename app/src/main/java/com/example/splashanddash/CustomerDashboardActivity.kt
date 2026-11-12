@@ -1,17 +1,12 @@
 package com.example.splashanddash
 
 import android.os.Bundle
-import android.widget.LinearLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class CustomerDashboardActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        android.util.Log.d(
-            "SplashDashDashboard",
-            "Customer Dashboard onCreate called"
-        )
 
         if (FirebaseAuth.getInstance().currentUser == null) {
             go(LoginActivity::class.java)
@@ -35,22 +30,13 @@ class CustomerDashboardActivity : BaseActivity() {
     }
 
     private fun loadDashboardStatistics() {
+        val expectedUid = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
-        val expectedUid =
-            FirebaseAuth.getInstance().currentUser?.uid ?: return
-        android.util.Log.d(
-            "SplashDashDashboard",
-            "Loading Firestore booking statistics"
-        )
-
-        FirestoreBookingRepository.getCustomerBookings {
-                bookings, error ->
-
+        FirestoreBookingRepository.getCustomerBookings { bookings, error ->
             if (isFinishing || isDestroyed) {
                 return@getCustomerBookings
             }
 
-            // Ignore results if the signed-in account changed.
             if (FirebaseAuth.getInstance().currentUser?.uid != expectedUid) {
                 return@getCustomerBookings
             }
@@ -66,22 +52,9 @@ class CustomerDashboardActivity : BaseActivity() {
             }
 
             val customerBookings = bookings.orEmpty()
-
             val totalBookings = customerBookings.size
-
-            val pendingBookings = customerBookings.count {
-                it.status.equals(
-                    "Pending",
-                    ignoreCase = true
-                )
-            }
-
-            val completedBookings = customerBookings.count {
-                it.status.equals(
-                    "Completed",
-                    ignoreCase = true
-                )
-            }
+            val pendingBookings = customerBookings.count { it.status.equals("Pending", ignoreCase = true) }
+            val completedBookings = customerBookings.count { it.status.equals("Completed", ignoreCase = true) }
 
             showDashboard(
                 total = totalBookings,
@@ -97,16 +70,15 @@ class CustomerDashboardActivity : BaseActivity() {
         completed: Int?,
         error: String? = null
     ) {
-
         val screen = content()
         val main = column()
 
-        // Retrieve the signed-in customer's name.
+        // TOP NAVIGATION BAR
+        main.addView(navBar())
+
         val customerName = AppData.currentUser
             .takeIf { it.isNotBlank() && it != "Guest" }
-            ?: FirebaseAuth.getInstance()
-                .currentUser
-                ?.displayName
+            ?: FirebaseAuth.getInstance().currentUser?.displayName
             ?: "Customer"
 
         // DASHBOARD HEADER
@@ -117,48 +89,23 @@ class CustomerDashboardActivity : BaseActivity() {
             )
         )
 
-        // ACTIVITY SECTION
-        main.addView(
-            text(
-                "Your Activity",
-                20f,
-                true
-            )
-        )
-
+        // ACTIVITY METRICS ROW
         val totalText = total?.toString() ?: "—"
         val pendingText = pending?.toString() ?: "—"
         val completedText = completed?.toString() ?: "—"
 
         main.addView(
-            card(
-                "Total Bookings",
-                totalText
-            )
-        )
-
-        main.addView(
-            card(
-                "Pending Bookings",
-                pendingText
-            )
-        )
-
-        main.addView(
-            card(
-                "Completed Services",
-                completedText
+            metricRow(
+                metricCard("Total Bookings", totalText),
+                metricCard("Pending", pendingText),
+                metricCard("Completed", completedText)
             )
         )
 
         if (error != null) {
             main.addView(
-                text(
-                    "Unable to load booking statistics: $error",
-                    14f
-                )
+                text("Unable to load booking statistics: $error", 14f)
             )
-
             main.addView(
                 outlineButton("RETRY") {
                     loadDashboardStatistics()
@@ -166,17 +113,16 @@ class CustomerDashboardActivity : BaseActivity() {
             )
         } else if (total == null) {
             main.addView(
-                text(
-                    "Loading your booking statistics...",
-                    14f
-                )
+                text("Loading live activity...", 14f)
             )
         }
 
-        // CUSTOMER ACTIONS
+        addSpacing(main, 10)
+
+        // QUICK ACTIONS SECTION
         main.addView(
             sectionTitle(
-                "What would you like to do?",
+                "Quick Actions",
                 "Manage your vehicle cleaning services"
             )
         )
@@ -184,12 +130,9 @@ class CustomerDashboardActivity : BaseActivity() {
         main.addView(
             card(
                 "Book a Service",
-                "Choose a car wash package and select a convenient date and time."
-            )
-        )
-
-        main.addView(
-            button("BOOK A SERVICE") {
+                "Schedule a car wash or house call package at your location.",
+                "Book Now"
+            ) {
                 go(BookingActivity::class.java)
             }
         )
@@ -197,12 +140,9 @@ class CustomerDashboardActivity : BaseActivity() {
         main.addView(
             card(
                 "My Bookings",
-                "View your booking history and track the status of your services."
-            )
-        )
-
-        main.addView(
-            button("VIEW MY BOOKINGS") {
+                "View history and check live service status.",
+                "View History"
+            ) {
                 go(BookingHistoryActivity::class.java)
             }
         )
@@ -210,12 +150,9 @@ class CustomerDashboardActivity : BaseActivity() {
         main.addView(
             card(
                 "Payments",
-                "View booking payment information and submit payment requests."
-            )
-        )
-
-        main.addView(
-            button("PAYMENTS") {
+                "Review pending payments and submit payment details.",
+                "Pay Now"
+            ) {
                 go(PaymentActivity::class.java)
             }
         )
@@ -223,33 +160,24 @@ class CustomerDashboardActivity : BaseActivity() {
         main.addView(
             card(
                 "Account Settings",
-                "Manage your account and application preferences."
-            )
-        )
-
-        main.addView(
-            outlineButton("SETTINGS") {
+                "Manage profile and application settings.",
+                "Settings"
+            ) {
                 go(SettingsActivity::class.java)
             }
         )
 
-        main.addView(
-            outlineButton("REFRESH DASHBOARD") {
-                loadDashboardStatistics()
-            }
-        )
+        addSpacing(main, 10)
 
         main.addView(
             outlineButton("LOG OUT") {
                 FirebaseAccountManager.signOut()
-
                 go(LoginActivity::class.java)
                 finish()
             }
         )
 
         main.addView(footer())
-
         screen.addView(main)
         setContentView(screen)
     }

@@ -1,8 +1,8 @@
 package com.example.splashanddash
 
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 
 data class OnlineBooking(
     val id: Long = 0,
@@ -14,6 +14,7 @@ data class OnlineBooking(
     val price: Int = 0,
     val date: String = "",
     val time: String = "",
+    val location: String = "",
     val status: String = "Pending"
 )
 
@@ -30,6 +31,7 @@ object FirestoreBookingRepository {
         time: String,
         price: Int,
         status: String,
+        location: String = "",
         onResult: (Boolean, String) -> Unit
     ) {
         val user = auth.currentUser
@@ -42,7 +44,6 @@ object FirestoreBookingRepository {
         // Generate a numeric ID based on time
         val numericId = System.currentTimeMillis()
 
-        // REMOVED "id" field to satisfy Firestore "hasOnly" rule
         val bookingData = hashMapOf(
             "customerId" to user.uid,
             "vehicle" to vehicle,
@@ -51,6 +52,7 @@ object FirestoreBookingRepository {
             "price" to price,
             "date" to date,
             "time" to time,
+            "location" to location,
             "status" to status,
             "createdAt" to FieldValue.serverTimestamp()
         )
@@ -92,7 +94,6 @@ object FirestoreBookingRepository {
                     val time = doc.getString("time") ?: return@mapNotNull null
 
                     OnlineBooking(
-                        // Retrieve the numeric ID from the document name itself
                         id = doc.id.toLongOrNull() ?: 0L,
                         firestoreId = doc.id,
                         customerId = customerId,
@@ -102,6 +103,7 @@ object FirestoreBookingRepository {
                         price = doc.getLong("price")?.toInt() ?: 0,
                         date = date,
                         time = time,
+                        location = doc.getString("location") ?: "",
                         status = doc.getString("status") ?: "Pending"
                     )
                 }.sortedWith(

@@ -10,75 +10,58 @@ class StaffDashboardActivity : BaseActivity() {
         val screen = content()
         val main = column()
 
+        // TOP NAVIGATION BAR
+        main.addView(navBar())
+
         main.addView(
             sectionTitle(
                 "Staff Dashboard",
-                "Welcome, ${AppData.currentUser}"
+                "Welcome back, ${AppData.currentUser}"
             )
         )
 
-        val pending = AppData.bookings.count {
-            it.status == "Pending"
-        }
+        val pending = AppData.bookings.count { it.status == "Pending" }.toString()
+        val inProgress = AppData.bookings.count { it.status == "In Progress" }.toString()
+        val completed = AppData.bookings.count { it.status == "Completed" }.toString()
 
-        val inProgress = AppData.bookings.count {
-            it.status == "In Progress"
-        }
-
-        val completed = AppData.bookings.count {
-            it.status == "Completed"
-        }
-
-        // ---------------------------------------------------------
-        // QUEUE SUMMARY
-        // ---------------------------------------------------------
-
+        // QUEUE OVERVIEW METRICS
         main.addView(
             text(
-                "Service Overview",
-                20f,
+                "Service Queue Overview",
+                18f,
                 true
             )
         )
 
         main.addView(
-            metricCard(
-                pending.toString(),
-                "Pending"
+            metricRow(
+                metricCard("Pending", pending),
+                metricCard("In Progress", inProgress),
+                metricCard("Completed", completed)
             )
         )
 
+        addSpacing(main, 10)
+
+        // QUICK ACTIONS
         main.addView(
-            metricCard(
-                inProgress.toString(),
-                "In Progress"
+            sectionTitle(
+                "Service Operations",
+                "Update customer bookings and progress"
             )
         )
-
-        main.addView(
-            metricCard(
-                completed.toString(),
-                "Completed"
-            )
-        )
-
-        addVerticalSpace(main, 12)
-
-        // ---------------------------------------------------------
-        // ACTIONS
-        // ---------------------------------------------------------
 
         main.addView(
             card(
                 "Service Queue",
                 "View today's bookings and update service progress.",
-                "Open"
+                "Open Queue"
             ) {
                 go(ServiceQueueActivity::class.java)
             }
         )
 
-        addVerticalSpace(main, 8)
+        addSpacing(main, 10)
 
         main.addView(
             outlineButton("LOG OUT") {
@@ -88,9 +71,7 @@ class StaffDashboardActivity : BaseActivity() {
         )
 
         main.addView(footer())
-
         screen.addView(main)
-
         setContentView(screen)
     }
 }
