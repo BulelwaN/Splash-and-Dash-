@@ -1321,6 +1321,7 @@ color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color danger
+color deep_ocean_blue
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1369,6 +1370,8 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ice_blue
+color indigo_blue
 color light_blue
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
@@ -2028,6 +2031,7 @@ color muted
 color navy
 color notification_action_color_filter
 color notification_icon_bg_color
+color ocean_blue
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2042,6 +2046,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sky_blue
 color success
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light

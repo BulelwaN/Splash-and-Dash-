@@ -43,11 +43,11 @@ com.example.splashanddash.app-biometric-1.1.0-41 C:\Users\Student\.gradle\caches
 com.example.splashanddash.app-savedstate-ktx-1.2.1-42 C:\Users\Student\.gradle\caches\8.10.2\transforms\fcd782dbe4f8dc55f7cb92caa7bf3a90\transformed\savedstate-ktx-1.2.1\res
 com.example.splashanddash.app-core-runtime-2.2.0-43 C:\Users\Student\.gradle\caches\8.10.2\transforms\fdf4ca5477c5633b45cb7bde1b561bc1\transformed\core-runtime-2.2.0\res
 com.example.splashanddash.app-datastore-core-release-44 C:\Users\Student\.gradle\caches\8.10.2\transforms\fec044319bd3f56985dd51397c486c0a\transformed\datastore-core-release\res
-com.example.splashanddash.app-pngs-45 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\pngs\debug
-com.example.splashanddash.app-res-46 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\processDebugGoogleServices
-com.example.splashanddash.app-resValues-47 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\generated\res\resValues\debug
-com.example.splashanddash.app-packageDebugResources-48 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.splashanddash.app-packageDebugResources-49 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.splashanddash.app-debug-50 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.splashanddash.app-debug-51 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\debug\res
-com.example.splashanddash.app-main-52 C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\res
+com.example.splashanddash.app-pngs-45 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\generated\res\pngs\debug
+com.example.splashanddash.app-res-46 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\generated\res\processDebugGoogleServices
+com.example.splashanddash.app-resValues-47 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\generated\res\resValues\debug
+com.example.splashanddash.app-packageDebugResources-48 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.splashanddash.app-packageDebugResources-49 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.splashanddash.app-debug-50 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.splashanddash.app-debug-51 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\debug\res
+com.example.splashanddash.app-main-52 C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\res

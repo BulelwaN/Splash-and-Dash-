@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:3:1-103:12
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:3:1-103:12
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:3:1-103:12
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:3:1-103:12
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:3:1-103:12
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:3:1-103:12
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:3:1-103:12
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:3:1-103:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\386e95a87bf2ffe8f36e6e94702628a4\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\8ff53c71ec0585b8c5c638c1dd7023dd\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
@@ -80,16 +80,16 @@ MERGED from [io.grpc:grpc-android:1.62.2] C:\Users\Student\.gradle\caches\8.10.2
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\9f9dd1b1e6683485ece3f54e01e421ac\transformed\protolite-well-known-types-18.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Student\.gradle\caches\8.10.2\transforms\cdfa67923e8c20d3708fa030c3deb7cc\transformed\core-common-2.0.3\AndroidManifest.xml:2:1-21:12
 	package
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:3:11-69
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:3:11-69
 application
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:5:5-101:19
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:5:5-101:19
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:5:5-101:19
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:5:5-101:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\8ff53c71ec0585b8c5c638c1dd7023dd\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
@@ -135,145 +135,145 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\St
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Student\.gradle\caches\8.10.2\transforms\cdfa67923e8c20d3708fa030c3deb7cc\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Student\.gradle\caches\8.10.2\transforms\cdfa67923e8c20d3708fa030c3deb7cc\transformed\core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\f08744fd6503d68643b17d987cfaed3d\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:9:9-35
 	android:roundIcon
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:10:9-55
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:10:9-55
 	android:icon
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:8:9-50
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:8:9-50
 	android:allowBackup
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:12:9-48
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:12:9-48
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:6:9-46
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:6:9-46
 activity#com.example.splashanddash.SplashActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:15:9-24:20
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:15:9-24:20
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:17:13-36
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:16:13-43
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:16:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:19:13-22:29
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.example.splashanddash.MainActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:27:9-29:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:29:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:28:13-41
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:28:13-41
 activity#com.example.splashanddash.LoginActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:32:9-34:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:32:9-34:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:34:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:33:13-42
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:33:13-42
 activity#com.example.splashanddash.RegisterActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:36:9-38:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:36:9-38:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:38:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:37:13-45
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:37:13-45
 activity#com.example.splashanddash.CustomerDashboardActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:41:9-43:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:41:9-43:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:43:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:42:13-54
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:42:13-54
 activity#com.example.splashanddash.BookingActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:45:9-47:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:45:9-47:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:47:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:47:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:46:13-44
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:46:13-44
 activity#com.example.splashanddash.BookingHistoryActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:49:9-51:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:49:9-51:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:51:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:51:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:50:13-51
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:50:13-51
 activity#com.example.splashanddash.PaymentActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:53:9-55:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:53:9-55:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:55:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:55:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:54:13-44
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:54:13-44
 activity#com.example.splashanddash.StaffDashboardActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:58:9-60:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:58:9-60:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:60:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:60:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:59:13-51
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:59:13-51
 activity#com.example.splashanddash.ServiceQueueActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:62:9-64:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:62:9-64:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:64:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:63:13-49
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:63:13-49
 activity#com.example.splashanddash.AdminDashboardActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:67:9-69:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:67:9-69:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:69:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:69:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:68:13-51
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:68:13-51
 activity#com.example.splashanddash.ManageBookingsActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:71:9-73:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:71:9-73:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:73:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:73:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:72:13-51
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:72:13-51
 activity#com.example.splashanddash.ManageCustomersActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:75:9-77:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:75:9-77:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:77:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:77:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:76:13-52
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:76:13-52
 activity#com.example.splashanddash.ManageStaffActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:79:9-81:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:79:9-81:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:81:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:81:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:80:13-48
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:80:13-48
 activity#com.example.splashanddash.ReportsActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:83:9-85:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:83:9-85:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:85:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:85:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:84:13-44
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:84:13-44
 activity#com.example.splashanddash.GalleryActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:88:9-90:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:88:9-90:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:90:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:90:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:89:13-44
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:89:13-44
 activity#com.example.splashanddash.ContactActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:92:9-94:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:92:9-94:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:94:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:94:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:93:13-44
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:93:13-44
 activity#com.example.splashanddash.SettingsActivity
-ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:97:9-99:40
+ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:97:9-99:40
 	android:exported
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:99:13-37
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:99:13-37
 	android:name
-		ADDED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:98:13-45
+		ADDED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:98:13-45
 uses-sdk
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\7cdbc1bf67eba3df871c3f3a6f4abc96\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\386e95a87bf2ffe8f36e6e94702628a4\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:5:5-44
@@ -427,9 +427,9 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\Student\.gradle
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\fb9c0ab596a4d68effb8fb5505ccba24\transformed\firebase-auth-24.0.1\AndroidManifest.xml:23:9-148
 	android:targetSdkVersion
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\fb9c0ab596a4d68effb8fb5505ccba24\transformed\firebase-auth-24.0.1\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-firestore:26.0.2] C:\Users\Student\.gradle\caches\8.10.2\transforms\f41a7c22bf958f53a9d53041ab13a6da\transformed\firebase-firestore-26.0.2\AndroidManifest.xml:11:5-67

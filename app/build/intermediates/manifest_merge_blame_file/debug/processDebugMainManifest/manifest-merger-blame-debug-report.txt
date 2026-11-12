@@ -36,160 +36,160 @@
 21-->[androidx.core:core:1.15.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\f08744fd6503d68643b17d987cfaed3d\transformed\core-1.15.0\AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:5:5-101:19
+23-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:5:5-101:19
 24        android:name="com.example.splashanddash.SplashDashApplication"
-24-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:6:9-46
+24-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:6:9-46
 25        android:allowBackup="true"
-25-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:7:9-35
+25-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:7:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 26-->[androidx.core:core:1.15.0] C:\Users\Student\.gradle\caches\8.10.2\transforms\f08744fd6503d68643b17d987cfaed3d\transformed\core-1.15.0\AndroidManifest.xml:28:18-86
 27        android:debuggable="true"
 28        android:extractNativeLibs="false"
 29        android:icon="@drawable/splash_dash_logo"
-29-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:8:9-50
+29-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:8:9-50
 30        android:label="SplashDash"
-30-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:9:9-35
+30-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:9:9-35
 31        android:roundIcon="@drawable/splash_dash_logo"
-31-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:10:9-55
+31-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:10:9-55
 32        android:supportsRtl="true"
-32-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:11:9-35
+32-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:11:9-35
 33        android:theme="@style/Theme.SplashDash" >
-33-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:12:9-48
+33-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:12:9-48
 34
 35        <!-- Splash Screen -->
 36        <activity
-36-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:15:9-24:20
+36-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:15:9-24:20
 37            android:name="com.example.splashanddash.SplashActivity"
-37-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:16:13-43
+37-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:16:13-43
 38            android:exported="true" >
-38-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:17:13-36
+38-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:17:13-36
 39            <intent-filter>
-39-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:19:13-22:29
+39-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:19:13-22:29
 40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:20:17-69
-40-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:20:25-66
+40-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:20:17-69
+40-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:20:25-66
 41
 42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:21:17-77
-42-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:21:27-74
+42-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:21:17-77
+42-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:21:27-74
 43            </intent-filter>
 44        </activity>
 45
 46        <!-- Main/Home Screen -->
 47        <activity
-47-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:27:9-29:40
+47-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:27:9-29:40
 48            android:name="com.example.splashanddash.MainActivity"
-48-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:28:13-41
+48-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:28:13-41
 49            android:exported="false" />
-49-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:29:13-37
+49-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:29:13-37
 50
 51        <!-- Authentication -->
 52        <activity
-52-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:32:9-34:40
+52-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:32:9-34:40
 53            android:name="com.example.splashanddash.LoginActivity"
-53-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:33:13-42
+53-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:33:13-42
 54            android:exported="false" />
-54-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:34:13-37
+54-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:34:13-37
 55        <activity
-55-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:36:9-38:40
+55-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:36:9-38:40
 56            android:name="com.example.splashanddash.RegisterActivity"
-56-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:37:13-45
+56-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:37:13-45
 57            android:exported="false" />
-57-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:38:13-37
+57-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:38:13-37
 58
 59        <!-- Customer -->
 60        <activity
-60-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:41:9-43:40
+60-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:41:9-43:40
 61            android:name="com.example.splashanddash.CustomerDashboardActivity"
-61-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:42:13-54
+61-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:42:13-54
 62            android:exported="false" />
-62-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:43:13-37
+62-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:43:13-37
 63        <activity
-63-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:45:9-47:40
+63-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:45:9-47:40
 64            android:name="com.example.splashanddash.BookingActivity"
-64-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:46:13-44
+64-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:46:13-44
 65            android:exported="false" />
-65-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:47:13-37
+65-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:47:13-37
 66        <activity
-66-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:49:9-51:40
+66-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:49:9-51:40
 67            android:name="com.example.splashanddash.BookingHistoryActivity"
-67-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:50:13-51
+67-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:50:13-51
 68            android:exported="false" />
-68-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:51:13-37
+68-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:51:13-37
 69        <activity
-69-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:53:9-55:40
+69-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:53:9-55:40
 70            android:name="com.example.splashanddash.PaymentActivity"
-70-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:54:13-44
+70-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:54:13-44
 71            android:exported="false" />
-71-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:55:13-37
+71-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:55:13-37
 72
 73        <!-- Staff -->
 74        <activity
-74-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:58:9-60:40
+74-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:58:9-60:40
 75            android:name="com.example.splashanddash.StaffDashboardActivity"
-75-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:59:13-51
+75-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:59:13-51
 76            android:exported="false" />
-76-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:60:13-37
+76-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:60:13-37
 77        <activity
-77-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:62:9-64:40
+77-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:62:9-64:40
 78            android:name="com.example.splashanddash.ServiceQueueActivity"
-78-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:63:13-49
+78-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:63:13-49
 79            android:exported="false" />
-79-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:64:13-37
+79-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:64:13-37
 80
 81        <!-- Admin -->
 82        <activity
-82-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:67:9-69:40
+82-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:67:9-69:40
 83            android:name="com.example.splashanddash.AdminDashboardActivity"
-83-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:68:13-51
+83-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:68:13-51
 84            android:exported="false" />
-84-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:69:13-37
+84-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:69:13-37
 85        <activity
-85-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:71:9-73:40
+85-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:71:9-73:40
 86            android:name="com.example.splashanddash.ManageBookingsActivity"
-86-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:72:13-51
+86-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:72:13-51
 87            android:exported="false" />
-87-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:73:13-37
+87-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:73:13-37
 88        <activity
-88-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:75:9-77:40
+88-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:75:9-77:40
 89            android:name="com.example.splashanddash.ManageCustomersActivity"
-89-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:76:13-52
+89-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:76:13-52
 90            android:exported="false" />
-90-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:77:13-37
+90-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:77:13-37
 91        <activity
-91-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:79:9-81:40
+91-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:79:9-81:40
 92            android:name="com.example.splashanddash.ManageStaffActivity"
-92-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:80:13-48
+92-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:80:13-48
 93            android:exported="false" />
-93-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:81:13-37
+93-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:81:13-37
 94        <activity
-94-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:83:9-85:40
+94-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:83:9-85:40
 95            android:name="com.example.splashanddash.ReportsActivity"
-95-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:84:13-44
+95-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:84:13-44
 96            android:exported="false" />
-96-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:85:13-37
+96-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:85:13-37
 97
 98        <!-- General -->
 99        <activity
-99-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:88:9-90:40
+99-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:88:9-90:40
 100            android:name="com.example.splashanddash.GalleryActivity"
-100-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:89:13-44
+100-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:89:13-44
 101            android:exported="false" />
-101-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:90:13-37
+101-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:90:13-37
 102        <activity
-102-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:92:9-94:40
+102-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:92:9-94:40
 103            android:name="com.example.splashanddash.ContactActivity"
-103-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:93:13-44
+103-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:93:13-44
 104            android:exported="false" />
-104-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:94:13-37
+104-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:94:13-37
 105
 106        <!-- Settings / Preferences -->
 107        <activity
-107-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:97:9-99:40
+107-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:97:9-99:40
 108            android:name="com.example.splashanddash.SettingsActivity"
-108-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:98:13-45
+108-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:98:13-45
 109            android:exported="false" />
-109-->C:\Users\Student\AndroidStudioProjects\SplashDashAndroid 2\SplashDashAndroid\app\src\main\AndroidManifest.xml:99:13-37
+109-->C:\Users\Student\AndroidStudioProjects\Splash-and-Dash-\app\src\main\AndroidManifest.xml:99:13-37
 110        <activity
 110-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\Student\.gradle\caches\8.10.2\transforms\fb9c0ab596a4d68effb8fb5505ccba24\transformed\firebase-auth-24.0.1\AndroidManifest.xml:29:9-46:20
 111            android:name="com.google.firebase.auth.internal.GenericIdpActivity"

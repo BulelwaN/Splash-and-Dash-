@@ -5,9 +5,14 @@ color blue
 color border
 color bright_blue
 color danger
+color deep_ocean_blue
+color ice_blue
+color indigo_blue
 color light_blue
 color muted
 color navy
+color ocean_blue
+color sky_blue
 color success
 color text
 color warning
