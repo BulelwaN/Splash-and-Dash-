@@ -1,30 +1,23 @@
+# Android / Gradle
 .gradle/
-/local.properties
-/.idea/
-/build/
-/captures/
+**/build/
+local.properties
 .externalNativeBuild/
 .cxx/
+captures/
 *.iml
 
-# .NET build files
-bin/
-obj/
+# Android Studio / IDE
+.idea/
 .vs/
 *.user
 *.suo
 
-# Android / Gradle
-.gradle/
-local.properties
-.idea/
-build/
-captures/
-.externalNativeBuild/
-.cxx/
-*.iml
+# .NET build output
+**/bin/
+**/obj/
 
-# Secrets and local configuration
+# Environment and local configuration
 .env
 .env.*
 !.env.example
@@ -33,7 +26,14 @@ appsettings.Development.json
 appsettings.*.json
 !appsettings.example.json
 
+# Credentials and signing keys
+*firebase-admin*.json
+*service-account*.json
+*.jks
+*.keystore
+
 # Operating system
 .DS_Store
 Thumbs.db
 desktop.ini
+

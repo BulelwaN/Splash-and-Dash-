@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FirebaseAdmin;
+using FirebaseAdmin.Auth;
+using Google.Apis.Auth.OAuth2;
+using Google.Cloud.Firestore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SplashDash.Api.Data;
@@ -28,6 +32,25 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Firebase configuration
+var firebaseProjectId =
+    builder.Configuration["Firebase:ProjectId"] ?? "splashdash-98961";
+
+var firebaseApp = FirebaseApp.Create(new AppOptions
+{
+    Credential = GoogleCredential.GetApplicationDefault(),
+    ProjectId = firebaseProjectId
+});
+
+builder.Services.AddSingleton(firebaseApp);
+
+builder.Services.AddSingleton(provider =>
+    FirebaseAuth.GetAuth(provider.GetRequiredService<FirebaseApp>()));
+
+builder.Services.AddSingleton(_ =>
+    FirestoreDb.Create(firebaseProjectId));
+
+// Existing website JWT authentication
 var jwtKey = builder.Configuration["Jwt:Key"]
     ?? throw new InvalidOperationException("JWT signing key is not configured.");
 
@@ -55,6 +78,24 @@ builder.Services
             NameClaimType = System.Security.Claims.ClaimTypes.Name,
             RoleClaimType = System.Security.Claims.ClaimTypes.Role
         };
+    })
+    // Firebase authentication for Android requests
+    .AddJwtBearer("Firebase", options =>
+    {
+        options.Authority =
+            $"https://securetoken.google.com/{firebaseProjectId}";
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer =
+                $"https://securetoken.google.com/{firebaseProjectId}",
+            ValidateAudience = true,
+            ValidAudience = firebaseProjectId,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ClockSkew = TimeSpan.FromMinutes(1)
+        };
     });
 
 builder.Services.AddAuthorization();
@@ -76,3 +117,4 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
+
